@@ -1,0 +1,58 @@
+@import 'https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap';
+header img {
+    height: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+body {
+    height: 125vh;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+}
+
+header * {
+    display: inline;
+}
+
+header {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li.nav {
+    float: left;
+    margin-left: 40px;
+    margin: 0px;
+}
+
+li a.nav {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 27px 33px;
+    text-decoration: none;
+}
+
+li a:hover.nav {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
