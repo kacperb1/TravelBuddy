@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="DE">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="nav">
+      <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo">
+      <ul class="nav">
+          <li class="nav"><a class="nav" href="index.html">Startseite</a></li>
+          <li class="nav"><a class="nav" href="all_places.html">Alle Orte</a></li>
+          <li class="nav"><a class="nav" href="top_places.html">Top Urlaubsziele</a></li>
+          <li class="nav"><a class="nav" href="general_hints.html">Allgemeine Tipps</a></li>
+          <li class="nav"><a class="nav" href="inspiration.hmtl">Inspiration</a></li>
+          <li class="nav"><a class="nav" href="packinglist.html">Packliste</a></li>
+          <li class="nav"><a class="nav active" href="login.html">Anmelden</a></li>
+          <li class="nav"><a class="nav" href="register.html">Registrieren</a></li>
+      </ul>
+  </header>
+
+<form class=" login" action="action_page.php" method="post">
+  
+    <div class="container">
+      <label for="uname"><b>Benutzername</b></label>
+      <input type="text" placeholder="Benutzername eingeben" name="uname" required>
+  
+      <label for="psw"><b>Passwort</b></label>
+      <input type="password" placeholder="Passwort eingeben" name="psw" required>
+  
+      <button type="submit">Anmelden</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Angemeldet bleiben
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Abbrechen</button>
+      <span class="psw">Passwort <a href="#">vergessen?</a></span>
+    </div>
+  </form>
+</body>
+<footer>
+  <p>© Copyright 2020 by Gerhard Koch. All rights reserved.</p>
+</footer>
+
+</html>
