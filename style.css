@@ -8,8 +8,9 @@ header img {
 body {
     height: 125vh;
     font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    margin-top: 80px;
+    margin: 80px 200px 80px 200px;
     padding: 30px;
+    max-width: 85em;
 }
 
 header * {
@@ -55,4 +56,78 @@ li a:hover.nav {
 
 .active {
     background-color: #4CAF50;
+}
+
+aside {
+    float: right;
+    width: 20%;
+    height: 600px;
+    /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+}
+
+article {
+    float: left;
+    width: 70%;
+    height: 600px;
+    /* only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+}
+
+footer {
+    background-color: #777;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.suche input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.suche button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer;
+}
+
+form.suche button:hover {
+    background: #0b7dda;
+}
+
+form.suche::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+section {
+    height: 200px;
+    margin-bottom: 40px;
+    background: #ccc;
+    padding: 20px;
+}
+
+p.artikel {
+    border: 2px solid rgb(76, 198, 247);
+    padding: 8px;
 }
