@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="DE">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allgemeine Tipps: TravelBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+    <script>
+        /* Navigationsleiste responsiv */
+        function NavResponsiv() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " responsive";
+            } else {
+                x.className = "navigation";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo" class="center">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="navigation" id="navigation">
+            <a href="index.html">Startseite</a>
+            <a href="all_places.html">Alle Orte</a>
+            <a href="top_places.html">Top Urlaubsziele</a>
+            <a href="general_hints.html" class="active">Allgemeine Tipps</a>
+            <a href="packinglist.html">Packliste</a>
+            <a style="float: right;" href="login.html">Anmelden</a>
+            <a style="float: right;" href="register.html">Registrieren</a>
+            <a href="javascript:void(0);" class="icon" onclick="NavResponsiv()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+
+    <section class="suche">
+        <h3>Wohin soll die Reise gehen?</h3>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <form class="suche" action="action_page.php">
+            <input type="text" placeholder="Tippe zum Beispiel 'Amsterdam' oder 'USA' ein!" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </section>
+
+    <br>
+
+    <hr>
+
+    <footer>
+        <p> (c) TravelBuddy 2020 GmbH </p>
+    </footer>
+</body>
+
+</html>

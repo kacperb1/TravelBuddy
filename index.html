@@ -6,54 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+    <script>
+        /* Navigationsleiste responsiv */
+        function NavResponsiv() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " responsive";
+            } else {
+                x.className = "navigation";
+            }
+        }
+    </script>
 </head>
 
 <body>
-    <header class="nav">
-        <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo">
-        <ul class="nav">
-            <li class="nav"><a class="nav active" href="index.html">Startseite</a></li>
-            <li class="nav"><a class="nav" href="all_places.html">Alle Orte</a></li>
-            <li class="nav"><a class="nav" href="top_places.html">Top Urlaubsziele</a></li>
-            <li class="nav"><a class="nav" href="general_hints.html">Allgemeine Tipps</a></li>
-            <li class="nav"><a class="nav" href="inspiration.hmtl">Inspiration</a></li>
-            <li class="nav"><a class="nav" href="packinglist.html">Packliste</a></li>
-            <li class="nav"><a class="nav" href="login.html">Anmelden</a></li>
-            <li class="nav"><a class="nav" href="register.html">Registrieren</a></li>
-        </ul>
+    <header>
+        <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo" class="center">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="navigation" id="navigation">
+            <a href="index.html" class="active">Startseite</a>
+            <a href="all_places.html">Alle Orte</a>
+            <a href="top_places.html">Top Urlaubsziele</a>
+            <a href="general_hints.html">Allgemeine Tipps</a>
+            <a href="packinglist.html">Packliste</a>
+            <a style="float: right;" href="login.html">Anmelden</a>
+            <a style="float: right;" href="register.html">Registrieren</a>
+            <a href="javascript:void(0);" class="icon" onclick="NavResponsiv()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
 
-        <section>
-            <h2>Wohin soll die Reise gehen?</h2>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
- 
+    <section class="suche">
+        <h3>Wohin soll die Reise gehen?</h3>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <form class="suche" action="action_page.php">
+            <input type="text" placeholder="Tippe zum Beispiel 'Amsterdam' oder 'USA' ein!" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </section>
 
-<form class="suche" action="action_page.php">
-  <input type="text" placeholder="Suche" name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
-         
-        </section>
-        <article>
-            <h2>Von der Redaktion ausgewählt!</h2>
+    <div class="zeile">
+        <div class="artikel spalte">
+            <h3>Von der Redaktion ausgewählt!</h3>
             <p class="artikel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                 no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             <p class="artikel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                 no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
                 et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        </article>
-        <aside>
+            <p class="artikel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="artikel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="artikel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            <p class="artikel">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+                et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="quick spalte">
             <h2>Quicklinks</h2>
             <ul>
                 <li><a href="all_places.html">Alle Orte</a></li>
                 <li><a href="top_places.html">Top Urlaubsziele</a></li>
                 <li><a href="general_hints.html">Allgemeine Tipps</a></li>
             </ul>
-        </aside>
+        </div>
+    </div>
+    <br>
+    <hr>
     <footer>
-        <p>© Copyright 2020 by Gerhard Koch. All rights reserved.</p>
+        <p> (c) TravelBuddy 2020 GmbH </p>
     </footer>
 </body>
 

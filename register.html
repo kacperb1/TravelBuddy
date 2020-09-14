@@ -2,54 +2,70 @@
 <html lang="DE">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+    <script>
+        /* Navigationsleiste responsiv */
+        function NavResponsiv() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " responsive";
+            } else {
+                x.className = "navigation";
+            }
+        }
+    </script>
 </head>
 
-<body>
-  <header class="nav">
-      <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo">
-      <ul class="nav">
-          <li class="nav"><a class="nav" href="index.html">Startseite</a></li>
-          <li class="nav"><a class="nav" href="all_places.html">Alle Orte</a></li>
-          <li class="nav"><a class="nav" href="top_places.html">Top Urlaubsziele</a></li>
-          <li class="nav"><a class="nav" href="general_hints.html">Allgemeine Tipps</a></li>
-          <li class="nav"><a class="nav" href="inspiration.hmtl">Inspiration</a></li>
-          <li class="nav"><a class="nav" href="packinglist.html">Packliste</a></li>
-          <li class="nav"><a class="nav" href="login.html">Anmelden</a></li>
-          <li class="nav"><a class="nav active" href="register.html">Registrieren</a></li>
-      </ul>
-  </header>
+<body class="login">
+    <header>
+        <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo" class="center">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="navigation" id="navigation">
+            <a href="index.html" class="active">Startseite</a>
+            <a href="all_places.html">Alle Orte</a>
+            <a href="top_places.html">Top Urlaubsziele</a>
+            <a href="general_hints.html">Allgemeine Tipps</a>
+            <a href="packinglist.html">Packliste</a>
+            <a style="float: right;" href="login.html">Anmelden</a>
+            <a style="float: right;" href="register.html" class="active">Registrieren</a>
+            <a href="javascript:void(0);" class="icon" onclick="NavResponsiv()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
 
-<form action="action_page.php" style="border:1px solid #ccc">
-    <div class="container">
-      <h1>Registrieren</h1>
-      <p>Bitte geben Sie Ihre Anmeldedaten ein.</p>
-      <hr>
-  
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="E-Mail eingeben" name="email" required>
-  
-      <label for="psw"><b>Passwort</b></label>
-      <input type="password" placeholder="Passwort eingeben" name="psw" required>
-  
-      <label for="psw-repeat"><b>Passwort wiederholen</b></label>
-      <input type="password" placeholder="Passwort wiederholen" name="psw-repeat" required>
-  
-      <p>Mit der Registrierung bestätigen Sie unsere AGB.</p>
-  
-      <div class="clearfix">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
+    <form action="action_page.php" class="login">
+        <div class="container">
+            <h1>Registrieren</h1>
+            <p>Bitte geben Sie Ihre Anmeldedaten ein.</p>
+            <hr>
 
-  </body>
-  <footer>
-    <p>© Copyright 2020 by Gerhard Koch. All rights reserved.</p>
-</footer>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="E-Mail eingeben" name="email" required>
+
+            <label for="psw"><b>Passwort</b></label>
+            <input type="password" placeholder="Passwort eingeben" name="psw" required>
+
+            <label for="psw-repeat"><b>Passwort wiederholen</b></label>
+            <input type="password" placeholder="Passwort wiederholen" name="psw-repeat" required>
+
+            <p>Mit der Registrierung bestätigen Sie unsere AGB.</p>
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <hr>
+    <footer>
+        <p> (c) TravelBuddy 2020 GmbH </p>
+    </footer>
+</body>
 
 </html>

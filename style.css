@@ -1,105 +1,121 @@
 @import 'https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap';
-header img {
-    height: 45px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
 body {
     font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    margin: 80px 200px 0px 200px;
+    max-width: 100em;
+    margin: 0 auto;
+    margin-top: 100px;
+    line-height: 1.5;
     padding: 30px;
-    max-width: 85em;
+    color: #555;
 }
 
-header * {
-    display: inline;
-}
-
-header.nav {
+header {
+    box-shadow: 0 0 25px 0 black;
     background-color: #333;
     position: fixed;
     top: 0;
+    width: 100%;
+    height: 0 auto;
     left: 0;
     right: 0;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 0 25px 0 black;
 }
 
-ul.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+header img.center {
+    height: 50px;
+    display: block;
+    margin: 4px auto 8px auto;
+}
+
+div.navigation {
+    max-width: 100em;
+    margin: 0 auto;
+}
+
+
+/* Navigation; Hintergrundfarbe Navigation; Style der Links innerhalb der Navigation; Mouseover Stil; Aktive Seite Farbe */
+
+.navigation {
+    background-color: #333;
     overflow: hidden;
 }
 
-li.nav {
+.navigation a {
     float: left;
-    margin-left: 40px;
-    margin: 0px;
-}
-
-li a.nav {
     display: block;
-    color: white;
+    color: #f2f2f2;
     text-align: center;
-    padding: 27px 33px;
+    padding: 14px 16px;
     text-decoration: none;
+    font-size: 17px;
 }
 
-li a:hover.nav {
-    background-color: #111;
+.navigation a:hover {
+    background-color: #ddd;
+    color: black;
 }
 
-.active {
+.navigation a.active {
     background-color: #4CAF50;
-}
-
-aside {
-    float: right;
-    width: 20%;
-    height: 600px;
-    /* only for demonstration, should be removed */
-    background: #ccc;
-    padding: 20px;
-}
-
-article {
-    float: left;
-    width: 70%;
-    height: 600px;
-    background: #ccc;
-    padding: 20px;
-}
-
-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
     color: white;
-    text-align: center;
-  }
-
-* {
-    box-sizing: border-box;
 }
+
+
+/* Hamburger Icon ausblenden */
+
+.navigation .icon {
+    display: none;
+}
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+
+@media screen and (max-width: 938px) {
+    .navigation a:not(:first-child) {
+        display: none;
+    }
+    .navigation a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+
+@media screen and (max-width: 938px) {
+    .navigation.responsive {
+        position: relative;
+    }
+    .navigation.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .navigation.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+
+/* Navigation Ende */
+
+
+/* Suche */
 
 form.suche input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
     float: left;
-    width: 90%;
+    width: 80%;
     background: #f1f1f1;
 }
 
 form.suche button {
     float: left;
-    width: 10%;
+    width: 20%;
     padding: 10px;
     background: #2196F3;
     color: white;
@@ -119,11 +135,34 @@ form.suche::after {
     display: table;
 }
 
-section {
-    height: 200px;
-    margin-bottom: 40px;
+
+/* Suche Ende */
+
+
+/* Inhalt */
+
+div.zeile {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+div.artikel {
     background: #ccc;
     padding: 20px;
+    flex-direction: column;
+    flex: 0 0 70%;
+}
+
+div.quick {
+    background: #c9c9c9cc;
+    padding: 20px;
+    flex-direction: column;
+    flex: 0 0 28%;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 p.artikel {
@@ -131,22 +170,42 @@ p.artikel {
     padding: 8px;
 }
 
+section.suche {
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: #ccc;
+    padding: 20px;
+}
+
+
+/* Inhalt Ende */
+
+
+/* Login / Registrieren */
+
 form.login {
-    border: 3px solid #f1f1f1;
-  }
-  
-  /* Full-width inputs */
-  input[type=text], input[type=password] {
+    margin-top: 30px;
+    border: 1px solid #f1f1f1;
+}
+
+
+/* Full-width inputs */
+
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-  }
-  
-  /* Set a style for all buttons */
-  button {
+}
+
+
+/* Set a style for all buttons */
+
+button {
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -154,38 +213,55 @@ form.login {
     border: none;
     cursor: pointer;
     width: 100%;
-  }
-  
-  /* Add a hover effect for buttons */
-  button:hover {
+}
+
+
+/* Add a hover effect for buttons */
+
+button:hover {
     opacity: 0.8;
-  }
-  
-  /* Extra style for the cancel button (red) */
-  .cancelbtn {
+}
+
+
+/* Extra style for the cancel button (red) */
+
+.cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
-  }
-  
-  /* Add padding to containers */
-  .container {
+}
+
+
+/* Add padding to containers */
+
+.container {
     padding: 16px;
-  }
-  
-  /* The "Forgot password" text */
-  span.psw {
+}
+
+
+/* The "Forgot password" text */
+
+span.psw {
     float: right;
     padding-top: 16px;
-  }
-  
-  /* Change styles for span and cancel button on extra small screens */
-  @media screen and (max-width: 300px) {
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
     span.psw {
-      display: block;
-      float: none;
+        display: block;
+        float: none;
     }
     .cancelbtn {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
+
+body.login {
+    max-width: 50em;
+}
+
+
+/* Login / Registrieren Ende */
