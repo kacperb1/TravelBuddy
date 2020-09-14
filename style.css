@@ -144,6 +144,7 @@ form.suche::after {
 div.zeile {
     display: flex;
     width: 100%;
+    padding-top: 30px;
     justify-content: space-between;
 }
 
@@ -186,7 +187,8 @@ section.suche {
 
 form.login {
     margin-top: 30px;
-    border: 1px solid #f1f1f1;
+    border: 1px grey;
+    background-color: #ccc;
 }
 
 
@@ -198,7 +200,7 @@ input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px grey;
     box-sizing: border-box;
 }
 
@@ -260,8 +262,14 @@ span.psw {
 }
 
 body.login {
-    max-width: 50em;
+    max-width: 60em;
 }
 
 
 /* Login / Registrieren Ende */
+
+/* Inspirationsseite mit Bildern */
+
+img.inspiration {
+    max-width: 500px;
+}
