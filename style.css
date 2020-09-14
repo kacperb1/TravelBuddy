@@ -1,17 +1,24 @@
 @import 'https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap';
 body {
     font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    max-width: 100em;
+    max-width: 90em;
     margin: 0 auto;
     margin-top: 100px;
     line-height: 1.5;
     padding: 30px;
     color: #555;
+    background-image: url("Images/Backgrounds/Hintergrundbild\ 1_weichzeichner.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
+
+
+/* Kopfzeile, Navigation; Hintergrundfarbe Navigation; Style der Links innerhalb der Navigation; Mouseover Stil; Aktive Seite Farbe */
 
 header {
     box-shadow: 0 0 25px 0 black;
-    background-color: #333;
+    background-color: white;
     position: fixed;
     top: 0;
     width: 100%;
@@ -27,22 +34,19 @@ header img.center {
 }
 
 div.navigation {
-    max-width: 100em;
+    max-width: 90em;
     margin: 0 auto;
 }
 
-
-/* Navigation; Hintergrundfarbe Navigation; Style der Links innerhalb der Navigation; Mouseover Stil; Aktive Seite Farbe */
-
 .navigation {
-    background-color: #333;
+    background-color: white;
     overflow: hidden;
 }
 
 .navigation a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #000000;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -50,24 +54,18 @@ div.navigation {
 }
 
 .navigation a:hover {
-    background-color: #ddd;
+    background-color: #fff9c4;
     color: black;
 }
 
 .navigation a.active {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #81d4fa;
+    color: #000000;
 }
-
-
-/* Hamburger Icon ausblenden */
 
 .navigation .icon {
     display: none;
 }
-
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 
 @media screen and (max-width: 938px) {
     .navigation a:not(:first-child) {
@@ -78,9 +76,6 @@ div.navigation {
         display: block;
     }
 }
-
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 
 @media screen and (max-width: 938px) {
     .navigation.responsive {
@@ -99,7 +94,7 @@ div.navigation {
 }
 
 
-/* Navigation Ende */
+/* Kopfzeile & Navigation Ende */
 
 
 /* Suche */
@@ -110,23 +105,25 @@ form.suche input[type=text] {
     border: 1px solid grey;
     float: left;
     width: 80%;
-    background: #f1f1f1;
+    background: #fffde7;
+    border-radius: 4px;
 }
 
 form.suche button {
     float: left;
     width: 20%;
     padding: 10px;
-    background: #2196F3;
+    background: #81d4fa;
     color: white;
     font-size: 17px;
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 form.suche button:hover {
-    background: #0b7dda;
+    background: #4fc3f7;
 }
 
 form.suche::after {
@@ -139,56 +136,124 @@ form.suche::after {
 /* Suche Ende */
 
 
-/* Inhalt */
-
-div.zeile {
-    display: flex;
-    width: 100%;
-    padding-top: 30px;
-    justify-content: space-between;
-}
-
-div.artikel {
-    background: #ccc;
-    padding: 20px;
-    flex-direction: column;
-    flex: 0 0 70%;
-}
-
-div.quick {
-    background: #c9c9c9cc;
-    padding: 20px;
-    flex-direction: column;
-    flex: 0 0 28%;
-}
+/* Aufbau der Seite und Inhalt */
 
 * {
     box-sizing: border-box;
 }
 
+a {
+    color: #4fc3f7;
+}
+
+div.flexcontainer_startseite {
+    display: flex;
+    width: 0 auto;
+    justify-content: space-between;
+}
+
+div.artikel {
+    background: white;
+    padding: 20px;
+    flex-direction: column;
+    flex: 0 0 70%;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.quicklinks {
+    background: white;
+    padding: 20px;
+    flex-direction: column;
+    flex: 0 0 28%;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.dsgvo {
+    background: white;
+    padding: 20px;
+    flex-direction: column;
+    flex: 0 0 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 p.artikel {
     border: 2px solid rgb(76, 198, 247);
     padding: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 6px;
+}
+
+div.keinesuche {
+    margin-top: 30px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 section.suche {
     height: 150px;
     margin-top: 30px;
     margin-bottom: 30px;
-    background: #ccc;
+    background: white;
     padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.flexcontainer_footer {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.aboutus {
+    flex: 0 0 50%;
+}
+
+div.developers {
+    flex: 0 0 20%;
+}
+
+div.importantlinks {
+    flex: 0 0 20%;
+}
+
+div.copyright {
+    flex: 0 0 100%
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+img.inspiration {
+    max-width: 455px;
 }
 
 
-/* Inhalt Ende */
+/* Aufbau der Seite und Inhalt */
 
 
 /* Login / Registrieren */
 
 form.login {
     margin-top: 30px;
-    border: 1px grey;
-    background-color: #ccc;
+    border: 1px solid #f1f1f1;
 }
 
 
@@ -200,7 +265,7 @@ input[type=password] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px grey;
+    border: 1px solid #ccc;
     box-sizing: border-box;
 }
 
@@ -262,14 +327,8 @@ span.psw {
 }
 
 body.login {
-    max-width: 60em;
+    max-width: 50em;
 }
 
 
 /* Login / Registrieren Ende */
-
-/* Inspirationsseite mit Bildern */
-
-img.inspiration {
-    max-width: 500px;
-}

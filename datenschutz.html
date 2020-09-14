@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="DE">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+    <script>
+        /* Navigationsleiste responsiv */
+        function NavResponsiv() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " responsive";
+            } else {
+                x.className = "navigation";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Kopfzeile / Navigation -->
+    <header>
+        <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo" class="center">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="navigation" id="navigation">
+            <a href="index.html">Startseite</a>
+            <a href="all_places.html">Alle Orte</a>
+            <a href="top_places.html">Top Urlaubsziele</a>
+            <a href="general_hints.html">Allgemeine Tipps</a>
+            <a href="packinglist.html">Packliste</a>
+            <a style="float: right;" href="login.html">Anmelden</a>
+            <a style="float: right;" href="register.html">Registrieren</a>
+            <a href="javascript:void(0);" class="icon" onclick="NavResponsiv()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+    <!-- Kopfzeile / Navigation Ende -->
+
+    <!-- Flexcontainer Inhalt Startseite -->
+    <div class="flexcontainer_startseite keinesuche">
+        <div class="dsgvo">
+            <h3>Datenschutzerklärung</h3>
+            <p class="artikel">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist: <br><br> TravelBuddy GmbH <br><br> Rotebühlplatz 41/1 <br><br> 70173 Stuttgart <br><br> Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über
+                die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, Kontaktdaten o. Ä.). Widerruf Ihrer Einwilligung zur Datenverarbeitung Nur mit Ihrer ausdrücklichen Einwilligung sind einige Vorgänge der Datenverarbeitung
+                möglich. Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+                Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde Als Betroffener steht Ihnen im Falle eines datenschutzrechtlichen Verstoßes ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher
+                Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der Sitz unseres Unternehmens befindet. Der folgende Link stellt eine Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit: https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html.
+                Recht auf Datenübertragbarkeit Ihnen steht das Recht zu, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an Dritte aushändigen zu lassen. Die Bereitstellung erfolgt
+                in einem maschinenlesbaren Format. <br><br> Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist. Recht auf Auskunft, Berichtigung, Sperrung, Löschung
+                Sie haben jederzeit im Rahmen der geltenden gesetzlichen Bestimmungen das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, Herkunft der Daten, deren Empfänger und den Zweck der Datenverarbeitung und ggf.
+                ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Diesbezüglich und auch zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit über die im Impressum aufgeführten Kontaktmöglichkeiten an uns wenden.
+                SSL- bzw. TLS-Verschlüsselung Aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, die Sie an uns als Seitenbetreiber senden, nutzt unsere Website eine SSL-bzw. TLS-Verschlüsselung. Damit sind Daten, die Sie über
+                diese Website übermitteln, für Dritte nicht mitlesbar. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol in der Browserzeile. <br><br> Wir haben einen Datenschutzbeauftragten
+                bestellt. Vorname, Name Straße 12345 Musterstadt Telefon: 01234-56789 Titel anhand dieser ISBN in Citavi-Projekt übernehmen E-Mail: dsb-e-mail-adresse@ihr-unternehmen.abc Server-Log-Dateien In Server-Log-Dateien erhebt und speichert der
+                Provider der Website automatisch Informationen, die Ihr Browser automatisch an uns übermittelt. Dies sind: Besuchte Seite auf unserer Domain Datum und Uhrzeit der Serveranfrage Browsertyp und Browserversion Verwendetes Betriebssystem Referrer
+                URL Hostname des zugreifenden Rechners IP-Adresse Es findet keine Zusammenführung dieser Daten mit anderen Datenquellen statt. Grundlage der Datenverarbeitung bildet Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung
+                eines Vertrags oder vorvertraglicher Maßnahmen gestattet. Registrierung auf dieser Website Zur Nutzung bestimmter Funktionen können Sie sich auf unserer Website registrieren. Die übermittelten Daten dienen ausschließlich zum Zwecke der
+                Nutzung des jeweiligen Angebotes oder Dienstes. <br><br> Bei der Registrierung abgefragte Pflichtangaben sind vollständig anzugeben. Andernfalls werden wir die Registrierung ablehnen. <br><br> Im Falle wichtiger Änderungen, etwa aus technischen
+                Gründen, informieren wir Sie per E-Mail. Die E-Mail wird an die Adresse versendet, die bei der Registrierung angegeben wurde. Die Verarbeitung der bei der Registrierung eingegebenen Daten erfolgt auf Grundlage Ihrer Einwilligung (Art.
+                6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitung bleibt vom Widerruf
+                unberührt. Wir speichern die bei der Registrierung erfassten Daten während des Zeitraums, den Sie auf unserer Website registriert sind. Ihren Daten werden gelöscht, sollten Sie Ihre Registrierung aufheben. Gesetzliche Aufbewahrungsfristen
+                bleiben unberührt. Kontaktformular Per Kontaktformular übermittelte Daten werden einschließlich Ihrer Kontaktdaten gespeichert, um Ihre Anfrage bearbeiten zu können oder um für Anschlussfragen bereitzustehen. Eine Weitergabe dieser Daten
+                findet ohne Ihre Einwilligung nicht statt. Die Verarbeitung der in das Kontaktformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits erteilten Einwilligung
+                ist jederzeit möglich. Für den Widerruf genügt eine formlose Mitteilung per E-Mail. <br><br> Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt. Über das Kontaktformular übermittelte
+                Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder keine Notwendigkeit der Datenspeicherung mehr besteht. Zwingende gesetzliche Bestimmungen - insbesondere Aufbewahrungsfristen
+                - bleiben unberührt. CleverReach Für den Versand von Newslettern nutzen wir CleverReach. Anbieter ist die CleverReach GmbH & Co. KG, Mühlenstr. 43, 26180 Rastede. Mit diesem Dienst können wir den Newsletterversand organisieren und analysieren.
+                Ihre für den Bezug des Newsletters eingegebenen Daten, wie beispielsweise Ihre E-Mail-Adresse, werden auf den Servern von CleverReach gespeichert. Serverstandorte sind Deutschland bzw. Irland. Der Newsletter-Versand mit CleverReach gestattet
+                es uns, das Verhalten des Newsletterempfängers zu analysieren. Die Analyse legt u.a. dar, wie viele Empfänger ihren Newsletter geöffnet haben und mit welcher Häufigkeit Links im Newsletter geklickt wurden. CleverReach unterstützt Conversion-Tracking,
+                um damit zu analysieren, ob nach Klick auf einen Link eine zuvor definierte Aktion, wie beispielsweise ein Produktkauf, erfolgt ist. Einzelheiten zur Datenanalyse durch CleverReach finden Sie unter: https://www.cleverreach.com/de/funktionen/reporting-und-tracking/.
+                Die Datenverarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf Ihrer bereits erteilten Einwilligung ist jederzeit möglich. <br><br> Für den Widerruf genügt eine formlose Mitteilung per E-Mail
+                oder Sie melden sich über den "Austragen"-Link im Newsletter ab. Die Rechtmäßigkeit der bereits erfolgten Datenverarbeitungsvorgänge bleibt vom Widerruf unberührt. Wünschen Sie keine Analyse durch CleverReach, müssen Sie den Newsletter
+                abbestellen. Für die Abbestellung genügt eine formlose Mitteilung per E-Mail an uns oder Sie melden sich über den "Austragen"-Link im Newsletter ab. Zur Einrichtung des Abonnements eingegebene Daten werden im Falle der Abmeldung von unseren
+                Servern und den Servern von CleverReach gelöscht. Sollten diese Daten für andere Zwecke und an anderer Stelle an uns übermittelt worden sein, verbleiben diese weiterhin bei uns. Einzelheiten zu den Datenschutzbestimmungen von CleverReach
+                finden Sie unter: https://www.cleverreach.com/de/datenschutz/. <br><br> Auftragsverarbeitung Zur vollständigen Erfüllung der gesetzlichen Datenschutzvorgaben haben wir mit CleverReach einen Vertrag über die Auftragsverarbeitung abgeschlossen.
+                Matomo (ehemals Piwik) Unsere Website verwendet den Webanalysedienst Matomo. Matomo ist eine Open Source Lösung. Matomo verwendet "Cookies." Das sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert und die eine Analyse
+                der Website-Benutzung ermöglichen. Mittels Cookie erzeugte Informationen über die Benutzung unserer Website werden auf unserem Server gespeichert. Vor der Speicherung erfolgt eine Anonymisierung Ihrer IP-Adresse. Cookies von Matomo verbleiben
+                auf Ihrem Endgerät, bis Sie eine Löschung vornehmen. Das Setzen von Matomo-Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Als Betreiber dieser Website haben wir ein berechtigtes Interesse an der anonymisierten Analyse des
+                Nutzerverhaltens, um sowohl unser Webangebot und ggf. auch Werbung zu optimieren. Es erfolgt keine Weitergabe der im Matomo-Cookie gespeicherten Informationen über die Benutzung dieser Website. Das Setzen von Cookies durch Ihren Webbrowser
+                ist verhinderbar. Einige Funktionen unserer Website könnten dadurch jedoch eingeschränkt werden. Sie können hier die Speicherung und Nutzung Ihrer Daten deaktivieren. Ihr Browser setzt ein Opt-Out-Cookie, welches die Speicherung von Matomo
+                Nutzungsdaten unterbindet. Wenn Sie Ihre Cookies löschen, wird auch das Matomo Opt-Out-Cookie entfernt. <br><br> Bei einem erneuten Besuch unserer Website ist das Opt-Out-Cookie zur Unterbindung der Speicherung und Nutzung Ihrer Daten
+                erneut zu setzen. [Hier Matomo iframe-Code einfügen] Google AdSense Unsere Website verwendet Google AdSense. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google AdSense dient der Einbindung von
+                Werbeanzeigen und setzt Cookies. Cookies sind kleine Textdateien, die Ihr Webbrowser auf Ihrem Endgerät speichert, um die Nutzung der Website analysieren. Google AdSense setzt außerdem Web Beacons ein. Web Beacons sind unsichtbare Grafiken,
+                die eine Analyse des Besucherverkehrs auf unserer Wesite ermöglichen. Durch Cookies und Web Beacons erzeugten Informationen werden an Server von Google übertragen und dort gespeichert. Serverstandort sind die USA. Google kann diese Informationen
+                an Vertragspartner weiterreichen. Ihre IP-Adresse wird Google jedoch nicht mit anderen von Ihnen gespeicherten Daten zusammenführen. Die Speicherung von AdSense-Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir als Websitebetreiber
+                haben ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um unser Webangebot und unsere Werbung zu optimieren. Mit einem modernen Webbrowser können Sie das Setzen von Cookies überwachen, einschränken und unterbinden. Die Deaktivierung
+                von Cookies kann eine eingeschränkte Funktionalität unserer Website zur Folge haben. Durch die Nutzung unserer Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise
+                sowie dem zuvor benannten Zweck einverstanden. Google Web Fonts Unsere Website verwendet Web Fonts von Google. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Durch den Einsatz dieser Web Fonts wird
+                es möglich Ihnen die von uns gewünschte Darstellung unserer Website zu präsentieren, unabhängig davon welche Schriften Ihnen lokal zur Verfügung stehen. Dies erfolgt über den Abruf der Google Web Fonts von einem Server von Google in den
+                USA und der damit verbundenen Weitergabe Ihre Daten an Google. Dabei handelt es sich um Ihre IP-Adresse und welche Seite Sie bei uns besucht haben. Der Einsatz von Google Web Fonts erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+                Als Betreiber dieser Website haben wir ein berechtigtes Interesse an der optimalen Darstellung und Übertragung unseres Webauftritts. Das Unternehmen Google ist für das us-europäische Datenschutzübereinkommen "Privacy Shield" zertifiziert.
+                Dieses Datenschutzübereinkommen soll die Einhaltung des in der EU geltenden Datenschutzniveaus gewährleisten.</p>
+        </div>
+
+    </div>
+    <!-- Flexcontainer Inhalt Startseite Ende -->
+
+    <br>
+    <!-- Abstand -->
+
+    <!-- Fußzeile -->
+    <footer>
+        <div class="flexcontainer_footer">
+            <div class="aboutus">
+                <h5>Über uns</h5>
+                <p style="font-size: small;">TravelBuddy ist dein digitaler, bester Freund auf Reisen. Tippe einfach dein Traum Urlaubsziel in die Suche ein und bekomme die Tipps von tausenden Nutzern weltweit angezeigt. Oder lass dich von unseren "von der Redaktion ausgewählten"
+                    Artikeln inspirieren und plane jetzt deine nächste Reise! <br> <b style="color: #03a9f4;">Disclaimer:</b> Diese Seite ist das Ergebnis unseres Projekts im 3. Semester an der Dualen Hochschule in Stuttgart. Daher können wir die Richtigkeit
+                    aller Daten oder das ordentliche Funktionieren aller Funktionen nicht Gewährleisten!</p>
+            </div>
+
+            <div class="importantlinks">
+                <h5>Wichtige Links</h5>
+                <ul style="font-size: small;">
+                    <li><a href="datenschutz.html">Datenschutz</a></li>
+                    <li><a href="404_notfound.html">Kontaktiere uns</a></li>
+                    <li><a href="404_notfound.html">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <div class="developers">
+                <h5>Die Entwickler</h5>
+                <ul style="font-size: small;">
+                    <li><a href="https://www.instagram.com/kacpermtk/">Kacper</a></li>
+                    <li><a href="https://www.instagram.com/m_elliii/">Milena</a></li>
+                    <li><a href="https://www.instagram.com/mika15lukas/">Mika</a></li>
+                    <li><a href="https://www.instagram.com/kvn510/">Kevin</a></li>
+                </ul>
+            </div>
+
+            <div class="copyright">
+                <hr>
+                <p style="font-size: x-small;"> © TravelBuddy 2020 GmbH. Alle Rechte vorbehalten. </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Fußzeile Ende -->
+</body>
+
+</html>

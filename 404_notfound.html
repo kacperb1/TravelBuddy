@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspiration: TravelBuddy</title>
+    <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Images/Icon.png">
     <script>
@@ -21,11 +21,12 @@
 </head>
 
 <body>
+    <!-- Kopfzeile / Navigation -->
     <header>
         <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo" class="center">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="navigation" id="navigation">
-            <a href="index.html">Startseite</a>
+            <a href="index.html" class="active">Startseite</a>
             <a href="all_places.html">Alle Orte</a>
             <a href="top_places.html">Top Urlaubsziele</a>
             <a href="general_hints.html">Allgemeine Tipps</a>
@@ -37,22 +38,35 @@
             </a>
         </div>
     </header>
+    <!-- Kopfzeile / Navigation Ende -->
 
+    <!-- Flexcontainer Inhalt Startseite -->
+    <div class="flexcontainer_startseite keinesuche">
+        <div class="artikel">
+            <h3>Fehler</h3>
+            <p class="artikel">Es tut uns leid, aber die gesuchte Seite konnte leider nicht gefunden werden. <br><br> <img src="Images/404.jpg" class="center" width="200px" height="200px"></p>
+        </div>
+        <div class="quicklinks">
+            <h2>Quicklinks</h2>
+            <ul>
+                <li><a href="all_places.html">Alle Orte</a></li>
+                <li><a href="top_places.html">Top Urlaubsziele</a></li>
+                <li><a href="general_hints.html">Allgemeine Tipps</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Flexcontainer Inhalt Startseite Ende -->
 
+    <!-- Section Suche -->
     <section class="suche">
-        <h3>Wohin soll die Reise gehen?</h3>
+        <h3>Versuche es stattdessen mit unserer Suche!</h3>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <form class="suche" action="action_page.php">
             <input type="text" placeholder="Tippe zum Beispiel 'Amsterdam' oder 'USA' ein!" name="search">
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </section>
-
-    <br>
-
-    <img class="inspiration" src="Images/StrandKenia.JPG" alt="Strand in Kenia" class="center">
-    <img class="inspiration" src="Images/Gardasee.JPG" alt="Gardasee" class="center">
-    <img class="inspiration" src="Images/ElefantenKenia.JPG" alt="Elefanten in Kenia" class="center">
+    <!-- Suche Ende-->
 
     <br>
     <!-- Abstand -->
