@@ -241,10 +241,6 @@ footer li {
     list-style-type: none;
 }
 
-img.inspiration {
-    max-width: 455px;
-}
-
 
 /* Aufbau der Seite und Inhalt */
 
@@ -332,3 +328,33 @@ body.login {
 
 
 /* Login / Registrieren Ende */
+
+/* Inspiration Bilder */
+
+.inspiration_images{
+    padding: 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inspiration_spalte{
+    padding: 0 4px;
+    max-width: 33%;
+    flex: 33%;
+}
+
+.inspiration_spalte img{
+    width: 100%;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 500px){
+    .inspiration_spalte{
+        max-width: 100%;
+        flex: 100%;
+        
+    }
+}
+
+/* Ende Inspiration Bilder */
