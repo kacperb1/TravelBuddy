@@ -190,7 +190,6 @@ div.keinesuche {
     margin-top: 30px;
 }
 
-
 section.suche {
     height: 150px;
     margin-top: 30px;
@@ -283,7 +282,7 @@ button:hover {
 
 /* Extra style for the cancel button (red) */
 
-.cancelbtn {
+.cancel {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
@@ -312,7 +311,7 @@ span.psw {
         display: block;
         float: none;
     }
-    .cancelbtn {
+    .cancel {
         width: 100%;
     }
 }
@@ -324,32 +323,33 @@ body.login {
 
 /* Login / Registrieren Ende */
 
+
 /* Inspiration Bilder */
 
-.inspiration_images{
+.inspiration_images {
     padding: 0 4px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.inspiration_spalte{
+.inspiration_spalte {
     padding: 0 4px;
     max-width: 33%;
     flex: 33%;
 }
 
-.inspiration_spalte img{
+.inspiration_spalte img {
     width: 100%;
     margin-top: 8px;
     vertical-align: middle;
 }
 
-@media screen and (max-width: 500px){
-    .inspiration_spalte{
+@media screen and (max-width: 500px) {
+    .inspiration_spalte {
         max-width: 100%;
         flex: 100%;
-        
     }
 }
+
 
 /* Ende Inspiration Bilder */
