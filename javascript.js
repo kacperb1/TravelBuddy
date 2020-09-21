@@ -1,12 +1,12 @@
 /* Navigationsleiste responsiv! Funktioniert nicht wie es soll in den HTML Seiten!!! */
-const NavResponsiv=() => {
-    let navigationsElement = document.getElementById("navigation");
-    if (navigationsElement.className === "navigation") {
-        navigationsElement.className += "responsive";
-    } else {
-        navigationsElement.className = "navigation";
-    }
-}
+        function NavResponsiv() {
+            var x = document.getElementById("navigation");
+            if (x.className === "navigation") {
+                x.className += " responsive";
+            } else {
+                x.className = "navigation";
+            }
+        }
 
 /* Registrieren Formular */
 
