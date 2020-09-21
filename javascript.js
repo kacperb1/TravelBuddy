@@ -1,4 +1,4 @@
-/* Navigationsleiste responsiv! Funktioniert nicht wie es soll in den HTML Seiten!!! */
+/* Responsive Navigationsleiste, Code übernommen und abgeändert von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp (Auch in den .html Dokumenten)*/
         function NavResponsiv() {
             var x = document.getElementById("navigation");
             if (x.className === "navigation") {
