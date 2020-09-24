@@ -15,6 +15,7 @@ body {
 
 
 /* Kopfzeile, Navigation; Hintergrundfarbe Navigation; Style der Links innerhalb der Navigation; Mouseover Stil; Aktive Seite Farbe */
+/* Navigation und Animation teilweise übernommen von https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_fade1 und von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
 header {
     box-shadow: 0 0 25px 0 black;
@@ -51,21 +52,27 @@ div.navigation {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    border: none;
+    opacity: 0.6;
+    transition: 0.3s;
 }
 
 .navigation a:hover {
     background-color: #fff9c4;
     color: black;
+    opacity: 1;
 }
 
 .navigation a.active {
     background-color: #81d4fa;
     color: #000000;
+    opacity: 1;
 }
 
 .navigation .icon {
     display: none;
 }
+
 
 @media screen and (max-width: 938px) {
     .navigation a:not(:first-child) {
