@@ -7,20 +7,23 @@ function NavResponsiv() {
         x.className = "navigation";
     }
 }
+/* Navigationsleiste Ende */
+
+
+/* Modal Popup Box Anfang */
 window.onload = function() {
+        var popup = document.querySelector(".popup");
+        var trigger = document.querySelector(".trigger");
+        var closeButton = document.querySelector(".close-button");
 
+        function togglePopup() {
+            popup.classList.toggle("show-modal");
+        }
 
-    var popup = document.querySelector(".popup");
-    var trigger = document.querySelector(".trigger");
-    var closeButton = document.querySelector(".close-button");
+        function windowOnClick(event) { if (event.target === popup) { togglePopup(); } }
 
-    function togglePopup() {
-        popup.classList.toggle("show-modal");
+        trigger.addEventListener("click", togglePopup);
+        closeButton.addEventListener("click", togglePopup);
+        window.addEventListener("click", windowOnClick);
     }
-
-    function windowOnClick(event) { if (event.target === popup) { togglePopup(); } }
-
-    trigger.addEventListener("click", togglePopup);
-    closeButton.addEventListener("click", togglePopup);
-    window.addEventListener("click", windowOnClick);
-}
+    /* Modal Popup Box Ende */

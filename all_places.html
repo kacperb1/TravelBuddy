@@ -29,18 +29,24 @@
         </div>
     </header>
     <!-- Kopfzeile / Navigation Ende -->
-    <button class="trigger">neuer Beitrag 🖊</button>
-    <div class="popup">
-        <div class="popup-content">
-            <span class="close-button">&times;</span>
-            <input class="neuer_Titel" type="text" name="titel_beitrag" value="Titel vergeben">
-            <textarea class="neuer_Beitrag" name="beitrag_inhalt">teile deine Reisetipps hier</textarea>
-            <button type="submit" id="beitrag_absenden">Veröffentlichen ✔</button>
-        </div>
-    </div>
+
     <div class="flexcontainer_startseite keinesuche">
         <div class="artikel">
-            <h2>Hallo </h2>
+            <h2>Neuen Beitrag erstellen</h2>
+            <button class="trigger">Neuer Beitrag ✍</button>
+            <div class="popup">
+                <div class="popup-content">
+                    <span class="close-button">&times;</span>
+                    <input class="neuer_Titel" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?">
+                    <textarea class="neuer_Beitrag" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!"></textarea>
+                    <button type="submit" id="beitrag_absenden">Veröffentlichen ✔</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>Alle Beiträge</h2>
+                <!-- Hier folgen alle Beiträge zusammen mit den Optionen zur Bearbeitung und zum Löschen-->
+            </div>
         </div>
 
         <div class="quicklinks">
@@ -88,7 +94,7 @@
 
             <div class="copyright">
                 <hr>
-                <p> © TravelBuddy 2020 GmbH. Alle Rechte vorbehalten. </p>
+                <p> Made with ♥ in Stuttgart. © TravelBuddy 2020 GmbH. Alle Rechte vorbehalten. </p>
             </div>
         </div>
     </footer>

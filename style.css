@@ -115,6 +115,7 @@ form.suche input[type=text] {
     width: 80%;
     background: #fffde7;
     border-radius: 4px;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
 }
 
 form.suche button {
@@ -247,6 +248,37 @@ footer li {
 }
 
 
+/* Inspiration Bilder */
+
+.inspiration_images {
+    padding: 0 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inspiration_spalte {
+    padding: 0 4px;
+    max-width: 33%;
+    flex: 33%;
+}
+
+.inspiration_spalte img {
+    width: 100%;
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 500px) {
+    .inspiration_spalte {
+        max-width: 100%;
+        flex: 100%;
+    }
+}
+
+
+/* Ende Inspiration Bilder */
+
+
 /* Aufbau der Seite und Inhalt */
 
 
@@ -336,38 +368,7 @@ body.login {
 /* Login / Registrieren Ende */
 
 
-/* Inspiration Bilder */
-
-.inspiration_images {
-    padding: 0 4px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.inspiration_spalte {
-    padding: 0 4px;
-    max-width: 33%;
-    flex: 33%;
-}
-
-.inspiration_spalte img {
-    width: 100%;
-    margin-top: 8px;
-    vertical-align: middle;
-}
-
-@media screen and (max-width: 500px) {
-    .inspiration_spalte {
-        max-width: 100%;
-        flex: 100%;
-    }
-}
-
-
-/* Ende Inspiration Bilder */
-
-
-/* Anfang Button neuer Beitrag */
+/* Anfang Button & Modal Popup neuer Beitrag */
 
 .popup {
     position: fixed;
@@ -400,11 +401,11 @@ body.login {
     text-align: center;
     cursor: pointer;
     border-radius: 0.25rem;
-    background-color: lightgray;
+    background-color: tomato;
 }
 
 .close-button:hover {
-    background-color: darkgray;
+    background-color: indianred;
 }
 
 .show-modal {
@@ -414,14 +415,12 @@ body.login {
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
-
-/* Ende Button neuer Beitrag */
-
 .neuer_Titel {
     padding: 10px;
-    font-size: 15px;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    font-size: 17px;
     border: 1px solid grey;
-    width: 30%;
+    width: 50%;
     background: #fffde7;
     border-radius: 4px;
 }
@@ -432,9 +431,13 @@ body.login {
     resize: vertical;
     font-family: "Poppins", "Helvetica", "Arial", sans-serif;
     padding: 12px 20px;
-    font-size: 14px;
+    font-size: 15px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid grey;
     box-sizing: border-box;
+    border-radius: 4px;
 }
+
+
+/* Ende Button & Modal Popup neuer Beitrag */
