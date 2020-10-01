@@ -7,7 +7,6 @@
     <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Images/Icon.png">
-    <script type="text/javascript" src="javascript.js"></script>
 </head>
 
 <body>
@@ -30,24 +29,35 @@
     </header>
     <!-- Kopfzeile / Navigation Ende -->
 
+
+    <!-- <input class="neuer_Titel" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?">
+    <textarea class="neuer_Beitrag" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!"></textarea>
+    <button type="submit" id="beitrag_absenden">Veröffentlichen ✔</button> -->
+
+
+
+
     <div class="flexcontainer_startseite keinesuche">
         <div class="artikel">
+
             <h2>Neuen Beitrag erstellen</h2>
-            <button class="trigger">Neuer Beitrag ✍</button>
+            <button class="trigger" id="neuerBeitragButton">Neuer Beitrag ✍</button>
             <div class="popup">
                 <div class="popup-content">
                     <span class="close-button">&times;</span>
-                    <input class="neuer_Titel" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?">
-                    <textarea class="neuer_Beitrag" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!"></textarea>
-                    <button type="submit" id="beitrag_absenden">Veröffentlichen ✔</button>
+                    <div id="beitragErstellen">
+                        <form id="beitrag-Form">
+                            <input class="titelReise" id="titel" placeholder="Wohin ging deine Reise?">
+                            <input class="lieblingsbild" id="bild" placeholder="Füge dein Lieblingsbild von deiner Reise hinzu!">
+                            <textarea class="reisetippsTeilen" id="inhalt" placeholder="Teile deine Reisetipps mit anderen hier!"></textarea>
+                            <input type="submit" class="veroeffentlichen" value="Veröffentlichen ">
+                    </div>
                 </div>
             </div>
-
-            <div>
-                <h2>Alle Beiträge</h2>
-                <!-- Hier folgen alle Beiträge zusammen mit den Optionen zur Bearbeitung und zum Löschen-->
-            </div>
+            <h2>Alle Beiträge</h2>
+            <div id="orte-container"></div>
         </div>
+
 
         <div class="quicklinks">
             <h2>Quicklinks</h2>
@@ -99,6 +109,8 @@
         </div>
     </footer>
     <!-- Fußzeile Ende -->
+
+    <script type="text/javascript" src="javascript.js"></script>
 </body>
 
 </html>
