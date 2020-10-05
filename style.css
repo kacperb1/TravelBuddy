@@ -104,47 +104,6 @@ div.navigation {
 
 /* Kopfzeile & Navigation Ende */
 
-
-/* Suche */
-
-form.suche input[type=text] {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #fffde7;
-    border-radius: 4px;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-}
-
-form.suche button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #81d4fa;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-    border-radius: 4px;
-}
-
-form.suche button:hover {
-    background: #4fc3f7;
-}
-
-form.suche::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-
-/* Suche Ende */
-
-
 /* Aufbau der Seite und Inhalt */
 
 * {
@@ -247,6 +206,18 @@ footer li {
     list-style-type: none;
 }
 
+.knopf {
+    background-color: #81d4fa;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+
 
 /* Inspiration Bilder */
 
@@ -281,6 +252,143 @@ footer li {
 
 /* Aufbau der Seite und Inhalt */
 
+/* Anfang Button & Modal Popup neuer Beitrag */
+
+.trigger {
+    background-color: #81d4fa;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+.popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 50%;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: tomato;
+}
+
+.close-button:hover {
+    background-color: indianred;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.titelReise {
+    padding: 10px;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    border: 1px solid grey;
+    width: 100%;
+    background: #fffde7;
+    border-radius: 4px;
+}
+
+.reisetippsTeilen {
+    width: 100%;
+    height: 80%;
+    resize: vertical;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    background: #fffde7;
+    border-radius: 4px;
+}
+
+.lieblingsbild {
+    padding: 10px;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    border: 1px solid grey;
+    width: 100%;
+    background: #fffde7;
+    border-radius: 4px;
+}
+
+
+
+
+/* Ende Button & Modal Popup neuer Beitrag */
+
+/* Suche */
+
+form.suche input[type=text] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #fffde7;
+    border-radius: 4px;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+}
+
+form.suche button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #81d4fa;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form.suche button:hover {
+    background: #4fc3f7;
+}
+
+form.suche::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Suche Ende */
 
 /* Login / Registrieren */
 
@@ -301,19 +409,6 @@ input[type=email] {
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-}
-
-
-/* Set a style for all buttons */
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
 }
 
 
@@ -366,112 +461,3 @@ body.login {
 
 
 /* Login / Registrieren Ende */
-
-
-/* Anfang Button & Modal Popup neuer Beitrag */
-
-.trigger {
-    background-color: #81d4fa;
-    color: white;
-    padding: 10px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 30%;
-}
-
-.popup {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem 1.5rem;
-    width: 50%;
-    border-radius: 0.5rem;
-}
-
-.close-button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: tomato;
-}
-
-.close-button:hover {
-    background-color: indianred;
-}
-
-.veroeffentlichen {
-    margin-left: 250px;
-    width: 120px;
-    margin-top: 10px;
-    line-height: 20px;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: #4CAF50;
-}
-
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
-
-.titelReise {
-    padding: 10px;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    font-size: 17px;
-    margin-top: 10px;
-    border: 1px solid grey;
-    width: 100%;
-    background: #fffde7;
-    border-radius: 4px;
-}
-
-.reisetippsTeilen {
-    width: 100%;
-    height: 80%;
-    resize: vertical;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    padding: 12px 20px;
-    font-size: 15px;
-    margin-top: 10px;
-    display: inline-block;
-    border: 1px solid grey;
-    box-sizing: border-box;
-    background: #fffde7;
-    border-radius: 4px;
-}
-
-.lieblingsbild {
-    padding: 10px;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    font-size: 17px;
-    margin-top: 10px;
-    border: 1px solid grey;
-    width: 100%;
-    background: #fffde7;
-    border-radius: 4px;
-}
-
-
-/* Ende Button & Modal Popup neuer Beitrag */

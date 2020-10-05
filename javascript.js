@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <h2>${orte.titel}</h2>
             <img src="${orte.bild}" width="640" height="360">
             <p>${orte.inhalt}</p>
-            <button data-id="${orte.id}" id="edit-${orte.id}" data-action="edit">📝 Bearbeiten</button>
-            <button data-id="${orte.id}" id="delete-${orte.id}" data-action="delete">🚮 Löschen</button>
+            <button data-id="${orte.id}" id="edit-${orte.id}" data-action="edit" class="knopf">📝 Bearbeiten</button>
+            <button data-id="${orte.id}" id="delete-${orte.id}" data-action="delete" class="knopf">🚮 Löschen</button>
           </div>
           <div id=edit-orte-${orte.id}>
             </div>`
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h2>${orte.titel}</h2>
                             <img src="${orte.bild}" width="640" height="360">
                             <p>${orte.inhalt}</p>
-                            <button data-id=${orte.id} id="edit-${orte.id}" data-action="edit">📝 Bearbeiten</button>
-                            <button data-id=${orte.id} id="delete-${orte.id}" data-action="delete">🚮 Löschen</button>
+                            <button data-id=${orte.id} id="edit-${orte.id}" data-action="edit" class="knopf">📝 Bearbeiten</button>
+                            <button data-id=${orte.id} id="delete-${orte.id}" data-action="delete" class="knopf">🚮 Löschen</button>
                           </div>
                           <div id=edit-orte-${orte.id}>
                           </div>`
@@ -93,13 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     const editButton = document.querySelector(`#edit-${e.target.dataset.id}`)
                     editButton.disabled = true
 
-                    const beitragData = alleOrte.find((Orte) => {
+                    const beitragData = alleOrte.find((orte) => {
                         return orte.id == e.target.dataset.id
                     })
 
                     const editForm = orteContainer.querySelector(`#edit-orte-${e.target.dataset.id}`)
                     editForm.innerHTML = `
-                    <form class='form' id='edit-orte' action='all_places.html' method='post'>
+                    <form class='form' id='edit-orte' action='index.html' method='post'>
                       <form id="beitrag-form">
                         <input required id="edit-titel" placeholder="${beitragData.titel}">
                         <input required id="edit-bild" placeholder="${beitragData.bild}">
@@ -132,22 +132,21 @@ document.addEventListener('DOMContentLoaded', function() {
                           <h2>${orte.titel}</h2>
                           <img src="${orte.Bild}" width="640" height="360">
                           <p>${orte.inhalt}</p>
-                          <button data-id=${orte.id} id="edit-${orte.id}" data-action="edit">📝 Bearbeiten</button>
-                          <button data-id=${orte.id} id="delete-${orte.id}" data-action="delete">🚮 Löschen</button>
+                          <button data-id=${orte.id} id="edit-${orte.id}" data-action="edit" class="knopf">📝 Bearbeiten</button>
+                          <button data-id=${orte.id} id="delete-${orte.id}" data-action="delete" class="knopf">🚮 Löschen</button>
                         </div>
                         <div id=edit-orte-${orte.id}>
                         </div>`
                                     editForm.innerHTML = ""
-
-                                    //editForm.remove();
-                                    //document.querySelector("#edit-titel").value = '';
-                                    //document.querySelector("#edit-bild").value = '';
-                                    //document.querySelector("#edit-inhalt").value = '';
-                                    //document.querySelector(`#orte-${beitragData.id}`).value = '';
-
-
+                                    editForm.remove();
+                                    document.querySelector("#edit-titel").value = '';
+                                    document.querySelector("#edit-bild").value = '';
+                                    document.querySelector("#edit-inhalt").value = '';
+                                    document.querySelector(`#orte-${beitragData.id}`).value = '';
                                 })
                         }) //Eventlistener, der für das Bearbeiten zuständig ist
+
+
 
                 } else if (e.target.dataset.action === 'delete') {
                     document.querySelector(`#orte-${e.target.dataset.id}`).remove()
@@ -160,5 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
             }) //Eventlistener, der für das Löschen zuständig ist
+
+
     })
     /* CRUD Funktionalität Ende */
