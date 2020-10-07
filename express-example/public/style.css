@@ -158,6 +158,23 @@ div.keinesuche {
     margin-top: 30px;
 }
 
+<<<<<<< HEAD:express-example/public/style.css
+=======
+ul.quicklinksliste {
+    line-height:215%;
+}
+
+section.suche {
+    height: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+>>>>>>> 14cdd9ea886b7a9b4eca03eea56fcebcfb2d021f:style.css
 .flexcontainer_footer {
     background: white;
     padding: 20px;
