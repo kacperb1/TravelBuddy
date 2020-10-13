@@ -104,6 +104,7 @@ div.navigation {
 
 /* Kopfzeile & Navigation Ende */
 
+
 /* Aufbau der Seite und Inhalt */
 
 * {
@@ -158,10 +159,8 @@ div.keinesuche {
     margin-top: 30px;
 }
 
-<<<<<<< HEAD:express-example/public/style.css
-=======
 ul.quicklinksliste {
-    line-height:215%;
+    line-height: 215%;
 }
 
 section.suche {
@@ -174,7 +173,6 @@ section.suche {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
->>>>>>> 14cdd9ea886b7a9b4eca03eea56fcebcfb2d021f:style.css
 .flexcontainer_footer {
     background: white;
     padding: 20px;
@@ -224,8 +222,16 @@ footer li {
     border-radius: 4px;
 }
 
-ul.quicklinks{
+ul.quicklinks {
     line-height: 215%;
+}
+
+#tabelleBeitraege {
+    border-color: #555;
+    margin-left: 15px;
+    background-color: #ffffff;
+    opacity: 0.8;
+    color: #000000;
 }
 
 
@@ -262,6 +268,7 @@ ul.quicklinks{
 
 /* Aufbau der Seite und Inhalt */
 
+
 /* Anfang Button & Modal Popup neuer Beitrag */
 
 .trigger {
@@ -273,7 +280,6 @@ ul.quicklinks{
     cursor: pointer;
     width: 30%;
 }
-
 
 .titelReise {
     padding: 10px;
@@ -311,8 +317,6 @@ ul.quicklinks{
     background: #fffde7;
     border-radius: 4px;
 }
-
-
 
 
 /* Ende Button & Modal Popup neuer Beitrag */

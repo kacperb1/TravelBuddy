@@ -35,13 +35,25 @@
 
             <h2>Neuen Beitrag erstellen ✍</h2>
             <div id="beitragErstellen">
-                <form id="beitrag-Form">
-                    <input class="titelReise" name="titel" placeholder="Wohin ging deine Reise?">
-                  <!-- <input class="lieblingsbild" id="bild" placeholder="Füge dein Lieblingsbild von deiner Reise hinzu!">--> 
-                    <input class="reisetippsTeilen" name="inhalt" placeholder="Teile deine Reisetipps mit anderen hier!">
+                <form id="neuerBeitrag">
+                    <input class="titelReise" name="titel" id="titel" placeholder="Wohin ging deine Reise?">
+                    <!-- <input class="lieblingsbild" id="bild" placeholder="Füge dein Lieblingsbild von deiner Reise hinzu!">-->
+                    <input class="reisetippsTeilen" id="beschreibung" name="inhalt" placeholder="Teile deine Reisetipps mit anderen hier!">
                     <button type="submit" id="veroeffentlichen" class="knopf"> Veröffentlichen ✔</button>
             </div>
             <h2>Alle Beiträge</h2>
+            <table id="tabelleBeitraege">
+                <thead>
+                    <tr>
+                        <th>Titel</th>
+                        <th>Beitrag</th>
+                        <th>Ändern</th>
+                        <th>Löschen</th>
+                    </tr>
+                </thead>
+                <tbody id="beitraege">
+                </tbody>
+            </table>
             <div id="orte-container"></div>
         </div>
 
@@ -106,7 +118,7 @@
         </div>
     </footer>
     <!-- Fußzeile Ende -->
-    <script  src="javascript.js"></script>
+    <script src="javascript.js"></script>
 </body>
 
 </html>

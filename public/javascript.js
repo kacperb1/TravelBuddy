@@ -11,7 +11,121 @@ function NavResponsiv() {
 }
 /* Navigationsleiste Ende */
 
-const neuerBeitragButton = document.querySelector("#veroeffentlichen");
+
+async function getBeitrag() {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("eid");
+    let response = await fetch('/beitrag/' + id);
+    let daten = await response.json().then(resData => { return resData });
+    return daten;
+}
+
+const form = document.querySelector("#neuerBeitrag");
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const values = Object.fromEntries(new FormData(event.target));
+
+    let aenderBeitrag = getBeitrag();
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("eid");
+
+    aenderBeitrag.titel = document.querySelector("#titel").value;
+    aenderBeitrag.beschreibung = document.querySelector("#beschreibung").value;
+
+
+    fetch('/beitrag/' + id, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(aenderBeitrag)
+        })
+        .then(res => res.json())
+        .then(beitrag => {
+            var url_string = window.location.href;
+            var url = new URL(url_string);
+            var uid = url.searchParams.get("uid");
+            window.location.href = "/index.html?uid=" + uid;
+        });
+})
+
+var zeahlerAendern = 0;
+var zeahlerLoeschen = 0;
+var zahelerEintraege = 0;
+var eintraege = document.getElementById("beitraege");
+let i = 0;
+
+fetch("/beitrag").then(res => {
+    return res.json();
+}).then(beitrag => {
+    beitrag.forEach(beitrag => {
+
+        var buttonAendern = document.createElement("button");
+        buttonAendern.type = "submit";
+        buttonAendern.id = zeahlerAendern;
+        zeahlerAendern++;
+        buttonAendern.innerText = "Ändern";
+        buttonAendern.addEventListener('click', function() {
+            let url_string = window.location.href;
+            let url = new URL(url_string);
+            let uid = url.searchParams.get("uid");
+            window.location = "/index.html?eid=" + buttonAendern.id + "&uid=" + uid;
+        }, false);
+
+        var buttonLoeschen = document.createElement("button");
+        buttonLoeschen.type = "submit";
+        buttonLoeschen.id = zeahlerLoeschen;
+        zeahlerLoeschen++;
+        buttonLoeschen.innerText = "Löschen";
+        buttonLoeschen.addEventListener('click', function() {
+            loeschen(buttonLoeschen.id);
+        }, false);
+
+        var neueZeile = beitraege.insertRow(i);
+        i++;
+        var neueZelle0 = neueZeile.insertCell(0);
+        var neueZelle1 = neueZeile.insertCell(1);
+        var neueZelle2 = neueZeile.insertCell(2);
+        var neueZelle3 = neueZeile.insertCell(3);
+
+        neueZelle0.innerHTML = beitrag.titel;
+        neueZelle1.innerHTML = beitrag.beschreibung;
+        neueZelle2.appendChild(buttonAendern);
+        neueZelle3.appendChild(buttonLoeschen);
+    });
+});
+
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    fetch("/beitrag", {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({ titel: document.querySelector("#titel").value, beschreibung: document.querySelector("#beschreibung").value })
+    }).then(res => {
+        return res.json();
+    });
+});
+
+function loeschen(beitragid) {
+    fetch('/beitrag/' + beitragid, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(eintrag => {
+            location.reload(true);
+        });
+}
+
+
+/*const neuerBeitragButton = document.querySelector("#veroeffentlichen");
 const alleOrte = document.querySelector("#orte-container");
 const Formular = document.querySelector("#beitrag-Form");
 
@@ -79,7 +193,7 @@ neuerBeitragButton.addEventListener("click", () => {
 });
 
 
-/* CRUD Funktionalität Anfang
+CRUD Funktionalität Anfang
 document.addEventListener('DOMContentLoaded', function() {
 
         const orteContainer = document.querySelector('#orte-container')
