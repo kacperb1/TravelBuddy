@@ -1,5 +1,7 @@
 //Clientseitiges Javascript
 
+//const { json } = require("express");
+
 /* Responsive Navigationsleiste, Code übernommen und abgeändert von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp (Auch in den .html Dokumenten)*/
 function NavResponsiv() {
     var x = document.getElementById("navigation");
@@ -48,8 +50,7 @@ form.addEventListener('submit', (event) => {
         .then(beitrag => {
             var url_string = window.location.href;
             var url = new URL(url_string);
-            var uid = url.searchParams.get("uid");
-            window.location.href = "/index.html?uid=" + uid;
+            window.location.href = "/index.html"
         });
 })
 
@@ -70,10 +71,7 @@ fetch("/beitrag").then(res => {
         zeahlerAendern++;
         buttonAendern.innerText = "Ändern";
         buttonAendern.addEventListener('click', function() {
-            let url_string = window.location.href;
-            let url = new URL(url_string);
-            let uid = url.searchParams.get("uid");
-            window.location = "/index.html?eid=" + buttonAendern.id + "&uid=" + uid;
+           window.location = "/index.html?eid=" + buttonAendern.id;
         }, false);
 
         var buttonLoeschen = document.createElement("button");
@@ -110,8 +108,9 @@ form.addEventListener('submit', (event) => {
         },
         body: JSON.stringify({ titel: document.querySelector("#titel").value, beschreibung: document.querySelector("#beschreibung").value })
     }).then(res => {
+        JSONSetObject(json);
         return res.json();
-    });
+      });
 });
 
 function loeschen(beitragid) {
