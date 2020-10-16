@@ -33,9 +33,6 @@ app.use(
 /*
 const Beitrag = require('./Beitrag.json');
 
-app.use(express.static('public'));
-app.use(express.json());
-
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -49,17 +46,18 @@ app.get('/Beitraege', async(req, res) => {
     res.json(rows);
 });
 
-/*app.get('/Beitraege/:id', (req, res) => {
+/*app.get('/Beitraege/:id', async(req, res) => {
   const Beitragid = req.params.id;
+  const [rows] = await connection.execute("Select * from reise where ID =" + Beitragid);
   let e1 = Beitrag[Beitragid];
+    
+  res.json({ e1 });
 
-    res.json({ e1 });
+});
 
-});*/
-
-app.post('/NeueBeitraege', async(req, res) => {
+/*app.post('/NeueBeitraege', async(req, res) => {
     const [
-        rows,
+        rows
     ] = await connection.execute("Insert into reise (Titel, Inhalt) Values (?, ?)", [req.body.titel, req.body.beschreibung]);
     // neuerBeitrag = req.body;
 
@@ -67,12 +65,12 @@ app.post('/NeueBeitraege', async(req, res) => {
 
     // res.status(201).json(Beitrag);
     res.json({
-        Tiel: req.body.titel,
-        Inhalt: req.body.beschreibung,
+        titel: req.body.titel,
+        beschreibung: req.body.beschreibung,
     });
 });
 
-/*app.delete('/Beitrag/:id', (req, res) => {
+app.delete('/Beitrag/:id', (req, res) => {
     const Beitragid = req.params.id;
 
     Beitrag.splice(Beitragid, 1);
@@ -80,8 +78,24 @@ app.post('/NeueBeitraege', async(req, res) => {
     console.log(Beitrag);
     res.status(201).json(Beitrag);
 });
+*/
+app.post("/neueBeitraege", async (req, res) =>{
+    res-status(200).send();
 
-app.put('/Beitrag/:id', (req, res) => {
+    let post = {
+       titel: req.body.titel,
+       beschreibung: req.body.inhalt,
+    }
+
+    console.log(req.body);
+    await connection.execute("Insert into reise (Titel, Inhalt) Values (?, ?)", [req.body.titel, req.body.beschreibung])
+   /*connection.query("Insert into reise set ?", post, (err, res) =>{
+        if (err) throw err;
+        console.log(res);
+    });*/
+});
+
+/* app.put('/Beitrag/:id', (req, res) => {
 
     const geanderterBeitrag = req.body;
     console.log(geanderterBeitrag);

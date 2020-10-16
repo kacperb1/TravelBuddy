@@ -11,7 +11,7 @@ PoC einer Community-Webseite zum Teilen von Tipps für Reisen und Urlaube. Die W
 In der Anwendung TravelBuddies werden die Programmiersprachen HTML, CSS und JavaScript verwendet. Das Frontend und das Backend interagieren miteinander mittels Fetch API. Die HTML-Elemente der Webseite verwenden entsprechende CSS-Dateien, um auch visuell ansprechend zu sein.
 
 ### Datenmodell
-*Beispiel JSON für alle verwendetetn Datenmodelle*
+*Beispiel JSON für alle verwendeten Datenmodelle*
 
 ``
 [
@@ -27,7 +27,7 @@ In der Anwendung TravelBuddies werden die Programmiersprachen HTML, CSS und Java
 - Startseite, auf der Beiträge - also Reisetipps zu verschiedenen Orten - angezeigt werden. Die Seite beinhaltet eine Maske mit deren Hilfe Benutzer neue Beiträge anlegen können. Außerdem besteht die Möglichkeit Beiträge zu bearbeiten oder zu löschen.
 - Die Seiten "Top Urlaubsziele, Allgemeine Tipps und Packliste" beinhalten statische Inhalte
 - Die Seite "Inspiration" beinhaltet eine Bildergalerie.
-- Auf einigen Seiten wurde mittels eines Flexcontainers der Inhalt responsiv in zwei hälften geteilt, wobei die rechte Hälfte immer eine Quicklinks Liste beinhaltet, welche für die Nutzer der Anwendung hilfreich sein könnten
+- Auf einigen Seiten wurde mittels eines Flexcontainers der Inhalt responsiv in zwei Hälften geteilt, wobei die rechte Hälfte immer eine Quicklinks Liste beinhaltet, welche für die Nutzer der Anwendung hilfreich sein könnten
 - Es gibt auch eine Login und Registrieren Seite, wobei hier die Funktionalität mangels Zeit nicht vollständig implementiert werden konnte.
 - Alle Seiten verfügen über einen Footer und eine responsive Navigationsleiste mit Logo und Hamburger-Menü Funktionalität
 - Auf das Backend wird mittels der Fetch API zugegriffen.

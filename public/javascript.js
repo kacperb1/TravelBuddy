@@ -14,14 +14,14 @@ function NavResponsiv() {
 /* Navigationsleiste Ende */
 
 
-async function getBeitrag() {
+/*async function getBeitrag() {
     var url_string = window.location.href;
     var url = new URL(url_string);
     var id = url.searchParams.get("eid");
     let response = await fetch('/beitrag/' + id);
     let daten = await response.json().then(resData => { return resData });
     return daten;
-}
+}*/
 
 const NeuesFormular = document.querySelector("#neuerBeitrag");
 
@@ -39,7 +39,6 @@ NeuesFormular.addEventListener('submit', (event) => {
         }
     }).then((res) => {
         console.log(res.ok);
-        window.location = "index.html";
     });
 
     console.log("Funktioniert", values);
