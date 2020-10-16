@@ -1,6 +1,36 @@
-const express = require('express');
+require("dotenv").config();
+
+const express = require("express");
+const mysql = require("mysql2/promise");
+const session = require("express-session");
+
 const app = express();
 
+let connection;
+
+mysql
+    .createConnection({​​
+        host: "localhost",
+        user: "root",
+        password: process.env.DB_PASSWORD,
+        database: "travelbuddy",
+    }​​)
+    .then((con) => {​​
+        connection = con;
+    }​​);
+
+app.use(express.static("public"));
+app.use(express.json());
+
+app.use(
+    session({​​
+        secret: "super secret",
+        resave: false,
+        saveUninitialized: true,
+    }​​)
+);
+
+/*
 const Beitrag = require('./Beitrag.json');
 
 app.use(express.static('public'));
@@ -12,28 +42,37 @@ app.use(function(req, res, next) {
     next();
 });
 
+*/
+app.get('/Beitraege', async(req, res) => {
 
-app.get('/Beitrag', (req, res) => {
-    res.json(Beitrag);
+    const [rows] = await connection.execute("Select * from reise");
+    res.json(rows);
 });
 
-app.get('/Beitrag/:id', (req, res) => {
-    const Beitragid = req.params.id;
-    let e1 = Beitrag[Beitragid];
+/*app.get('/Beitraege/:id', (req, res) => {
+  const Beitragid = req.params.id;
+  let e1 = Beitrag[Beitragid];
 
     res.json({ e1 });
 
+});*/
+
+app.post('/NeueBeitraege', async(req, res) => {
+    const [
+        rows,
+    ] = await connection.execute("Insert into reise (Titel, Inhalt) Values (?, ?)", [req.body.titel, req.body.beschreibung]);
+    // neuerBeitrag = req.body;
+
+    //  Beitrag.push(neuerBeitrag);
+
+    // res.status(201).json(Beitrag);
+    res.json({
+        Tiel: req.body.titel,
+        Inhalt: req.body.beschreibung,
+    });
 });
 
-app.post('/Beitrag', (req, res) => {
-    const neuerBeitrag = req.body;
-
-    Beitrag.push(neuerBeitrag);
-
-    res.status(201).json(Beitrag);
-});
-
-app.delete('/Beitrag/:id', (req, res) => {
+/*app.delete('/Beitrag/:id', (req, res) => {
     const Beitragid = req.params.id;
 
     Beitrag.splice(Beitragid, 1);
@@ -61,6 +100,6 @@ app.put('/Beitrag/:id', (req, res) => {
         console.log(Beitrag);
         res.status(200).json(Beitrag);
     }
-});
+});*/
 
 app.listen(3000);

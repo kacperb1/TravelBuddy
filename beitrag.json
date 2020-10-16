@@ -1,7 +1,7 @@
-[
-    { "id": 1, "titel": "Amsterdam", "beschreibung": "Eine super tolle Stadt für jeden. Tolle kleine Gassen. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-    { "id": 2, "titel": "Berlin", "beschreibung": "Mega Urlaub in Deutschland. Ein kulturelles MUSS! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
-    { "id": 3, "titel": "Kroatien", "beschreibung": "Somme, Sonne, Strand une Meer - was will man mehr?" },
-    { "id": 4, "titel": "Kenia", "beschreibung": "Safari und wilde Tiere, Abenteuer pur"}
+ [
+     { "id": 1, "titel": "Amsterdam", "beschreibung": "Eine super tolle Stadt für jeden. Tolle kleine Gassen. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+     { "id": 2, "titel": "Berlin", "beschreibung": "Mega Urlaub in Deutschland. Ein kulturelles MUSS! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." },
+     { "id": 3, "titel": "Kroatien", "beschreibung": "Somme, Sonne, Strand une Meer - was will man mehr?" },
+     { "id": 4, "titel": "Kenia", "beschreibung": "Safari und wilde Tiere, Abenteuer pur" }
 
-]
+ ]
