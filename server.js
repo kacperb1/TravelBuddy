@@ -9,25 +9,25 @@ const app = express();
 let connection;
 
 mysql
-    .createConnection({​​
+    .createConnection({
         host: "localhost",
         user: "root",
         password: process.env.DB_PASSWORD,
         database: "travelbuddy",
-    }​​)
-    .then((con) => {​​
+    })
+    .then((con) => {
         connection = con;
-    }​​);
+    });
 
 app.use(express.static("public"));
 app.use(express.json());
 
 app.use(
-    session({​​
+    session({
         secret: "super secret",
         resave: false,
         saveUninitialized: true,
-    }​​)
+    })
 );
 
 /*
