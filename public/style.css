@@ -211,9 +211,9 @@ footer li {
     list-style-type: none;
 }
 
-.knopf {
+button {
     background-color: #81d4fa;
-    color: white;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -222,8 +222,12 @@ footer li {
     border-radius: 4px;
 }
 
-ul.quicklinks {
-    line-height: 215%;
+th {
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
 }
 
 #tabelleBeitraege {
