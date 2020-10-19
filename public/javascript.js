@@ -1,8 +1,6 @@
 //Clientseitiges Javascript
 
-//const { json } = require("express");
-
-/* Responsive Navigationsleiste, Code übernommen und abgeändert von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp (Auch in den .html Dokumenten)*/
+// Responsive Navigationsleiste, Code übernommen und abgeändert von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp (Auch in den .html Dokumenten)
 function NavResponsiv() {
     const x = document.getElementById("navigation");
     if (x.className === "navigation") {
@@ -11,7 +9,7 @@ function NavResponsiv() {
         x.className = "navigation";
     }
 }
-/* Navigationsleiste Ende */
+
 
 //const fetchButton = document.querySelector("#fetchbeitraege");
 const eintrag = document.querySelector("#tabelleBeitraege");
@@ -35,7 +33,7 @@ createForm.addEventListener("submit", (e) => {
     console.log("FORM SUBMITTED", values);
 });
 //fetchButton.addEventListener("click", () => {
-  let i = 0;
+let i = 0;
 
 fetch("/beitraege", {
 
@@ -45,12 +43,12 @@ fetch("/beitraege", {
         },
     })
     .then(res => {
-            // console.log(res.ok, res.status, res)
-            if (!res.ok) return Promise.reject(res.status);
-            return res.json();
-        })
+        // console.log(res.ok, res.status, res)
+        if (!res.ok) return Promise.reject(res.status);
+        return res.json();
+    })
     .then((beitraege) => {
-              beitraege.forEach((beitraege) => {
+        beitraege.forEach((beitraege) => {
 
             const buttonAendern = document.createElement("button");
             buttonAendern.type = "submit";
@@ -72,14 +70,14 @@ fetch("/beitraege", {
             const neueZelle2 = neueZeile.insertCell(2);
             const neueZelle3 = neueZeile.insertCell(3);
 
-            neueZelle0.innerHTML = beitraege.titel;
+            neueZelle0.innerHTML = beitraege.reiseTitel;
             neueZelle1.innerHTML = beitraege.inhalt;
             neueZelle2.appendChild(buttonAendern);
             neueZelle3.appendChild(buttonLoeschen);
 
             buttonAendern.addEventListener('click', () => {
-              console.log("Bearbeiten noch nicht implementiert")
-          });
+                console.log("Bearbeiten noch nicht implementiert")
+            });
 
             buttonLoeschen.addEventListener("click", () => {
 
