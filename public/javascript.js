@@ -14,7 +14,7 @@ function NavResponsiv() {
 /* Navigationsleiste Ende */
 
 //const fetchButton = document.querySelector("#fetchbeitraege");
-const list = document.querySelector("#tabelleBeitraege");
+const eintrag = document.querySelector("#tabelleBeitraege");
 const createForm = document.querySelector("#neuerBeitrag");
 
 createForm.addEventListener("submit", (e) => {
@@ -24,9 +24,7 @@ createForm.addEventListener("submit", (e) => {
     fetch("/beitraege", {
 
         method: "POST",
-
         body: JSON.stringify(values),
-
         headers: {
 
             "content-type": "application/json",
@@ -37,6 +35,7 @@ createForm.addEventListener("submit", (e) => {
     console.log("FORM SUBMITTED", values);
 });
 //fetchButton.addEventListener("click", () => {
+  let i = 0;
 
 fetch("/beitraege", {
 
@@ -45,32 +44,28 @@ fetch("/beitraege", {
             "content-type": "application/json",
         },
     })
-    /*.then(res => {
+    .then(res => {
             // console.log(res.ok, res.status, res)
             if (!res.ok) return Promise.reject(res.status);
             return res.json();
-        })*/
+        })
     .then((beitraege) => {
-        // console.log(reise);
-        beitraege.forEach((reise) => {
+              beitraege.forEach((beitraege) => {
 
             const buttonAendern = document.createElement("button");
             buttonAendern.type = "submit";
-            buttonAendern.id = reise.id;
+            buttonAendern.id = i;
             buttonAendern.innerText = "Ändern";
-            buttonAendern.addEventListener('click', function() {
-                window.location = "/index.html?eid=" + buttonAendern.id;
-            }, false);
 
             const buttonLoeschen = document.createElement("button");
             buttonLoeschen.type = "submit";
-            buttonLoeschen.id = reise.id;
+            buttonLoeschen.id = i;
             buttonLoeschen.innerText = "Löschen";
             /* buttonLoeschen.addEventListener('click', function() {
                  loeschen(buttonLoeschen.id);
              }, false);*/
 
-            const neueZeile = tabelleBeitraege.insertRow(i);
+            const neueZeile = tabelleReisen.insertRow(i);
             i++;
             const neueZelle0 = neueZeile.insertCell(0);
             const neueZelle1 = neueZeile.insertCell(1);
@@ -78,34 +73,33 @@ fetch("/beitraege", {
             const neueZelle3 = neueZeile.insertCell(3);
 
             neueZelle0.innerHTML = beitraege.titel;
-            neueZelle1.innerHTML = beitraege.beschreibung;
+            neueZelle1.innerHTML = beitraege.inhalt;
             neueZelle2.appendChild(buttonAendern);
             neueZelle3.appendChild(buttonLoeschen);
 
+            buttonAendern.addEventListener('click', () => {
+              console.log("Bearbeiten noch nicht implementiert")
+          });
+
             buttonLoeschen.addEventListener("click", () => {
 
-                fetch(`/beitraege/${reise.id}`, {
-
+                fetch(`/beitraege/${beitraege.id}`, {
                     method: "DELETE",
-
                 }).then((res) => {
 
                     if (res.ok) {
-
                         neueZeile.remove();
                     }
                 });
             });
-            neueZeile.append(buttonLoeschen);
-            tabelleBeitraege.appendChild(neueZeile);
-
+            tabelleReisen.appendChild(neueZeile);
         });
     })
     .catch((e) => {
         alert(`WHOOPS: ${e}`);
     });
 
-
+/*
 function loeschen(beitragid) {
     fetch('/beitraege/' + beitragid, {
             method: 'DELETE'
@@ -114,4 +108,4 @@ function loeschen(beitragid) {
         .then(eintrag => {
             location.reload(true);
         });
-}
+}*/
