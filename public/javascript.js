@@ -31,6 +31,7 @@ createForm.addEventListener("submit", (e) => {
         console.log(res.ok);
     });
     console.log("FORM SUBMITTED", values);
+    location.reload();
 });
 //fetchButton.addEventListener("click", () => {
 let i = 0;

@@ -31,13 +31,13 @@ app.post("/beitraege", async(req, res) => {
     const [
         rows,
     ] = await connection.execute(
-            "INSERT INTO reise (reiseTitel, inhalt) VALUES (?, ?)", [req.body.reiseTitel, req.body.inhalt])
+            "INSERT INTO reise (reiseTitel, inhalt) VALUES (?, ?)", [req.body.titel, req.body.beschreibung])
         .catch((err) => { res.status(500).send('Beitrag konnte nicht gepostet werden.'); });
 
     res.json({
-        id: rows.insertId,
-        titel: req.body.reiseTitel,
-        inhalt: req.body.inhalt,
+        id: reise.insertId,
+        titel: req.body.titel,
+        inhalt: req.body.beschreibung,
     });
 });
 
