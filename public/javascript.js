@@ -52,9 +52,13 @@ fetch("/beitraege", {
         beitraege.forEach((beitraege) => {
 
             const buttonAendern = document.createElement("button");
-            buttonAendern.type = "submit";
+            //buttonAendern.type = "submit";
             buttonAendern.id = i;
             buttonAendern.innerText = "Ändern";
+            buttonAendern.class = "trigger";
+            buttonAendern.onclick = function() {
+                location.href = "entry_update.html"
+            };
 
             const buttonLoeschen = document.createElement("button");
             buttonLoeschen.type = "submit";
@@ -76,9 +80,11 @@ fetch("/beitraege", {
             neueZelle2.appendChild(buttonAendern);
             neueZelle3.appendChild(buttonLoeschen);
 
-            buttonAendern.addEventListener('click', () => {
-                console.log("Bearbeiten noch nicht implementiert")
-            });
+            //buttonAendern.addEventListener('click', () => {
+            //  console.log("Bearbeiten noch nicht implementiert")
+            //window.open(entry_update.html);
+            //onclick="location.href='entry_update.html';"
+            //});
 
             buttonLoeschen.addEventListener("click", () => {
 
