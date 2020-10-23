@@ -14,11 +14,13 @@ function NavResponsiv() {
 //const fetchButton = document.querySelector("#fetchbeitraege");
 const eintrag = document.querySelector("#tabelleBeitraege");
 const createForm = document.querySelector("#neuerBeitrag");
+const changeForm = document.querySelector("#bearbeiteBeitrag");
 
 createForm.addEventListener("submit", (e) => {
 
     e.preventDefault();
     const values = Object.fromEntries(new FormData(e.target));
+
     fetch("/beitraege", {
 
         method: "POST",
@@ -35,6 +37,7 @@ createForm.addEventListener("submit", (e) => {
 });
 //fetchButton.addEventListener("click", () => {
 let i = 0;
+let buttonAendernId = 0;
 
 fetch("/beitraege", {
 
@@ -57,6 +60,7 @@ fetch("/beitraege", {
             buttonAendern.innerText = "Ändern";
             buttonAendern.class = "trigger";
             buttonAendern.onclick = function() {
+                buttonAendernId = buttonAendern.id;
                 location.href = "entry_update.html"
             };
 
@@ -104,6 +108,26 @@ fetch("/beitraege", {
         alert(`WHOOPS: ${e}`);
     });
 
+
+changeForm.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+    const values = Object.fromEntries(new FormData(e.target));
+    const valueID = Object.fromEntries(new FormData(changeForm));
+    fetch("/beitraege", {
+
+        method: "put",
+        body: JSON.stringify(values),
+        headers: {
+
+            "content-type": "application/json",
+        },
+    }).then((res) => {
+        console.log(res.ok);
+    });
+    console.log("FORM SUBMITTED", values);
+    location.reload();
+});
 /*
 function loeschen(beitragid) {
     fetch('/beitraege/' + beitragid, {
