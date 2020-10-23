@@ -27,21 +27,36 @@
             </a>
         </div>
     </header>
-    <!-- Kopfzeile / Navigation Ende -->
+
 
     <!-- Flexcontainer Inhalt Startseite -->
     <div class="flexcontainer_startseite keinesuche">
+
         <div class="artikel">
-            <!--<button type="submit" id="fetchbeitraege" class="fetchbeitraege"> Lade Beiträge</button>-->
+
             <h2>Neuen Beitrag erstellen ✍</h2>
-            <div id="beitragErstellen">
-                <form id="neuerBeitrag">
-                    <input class="titelReise" name="titel" id="titel" placeholder="Wohin ging deine Reise?">
-                    <!-- <input class="lieblingsbild" id="bild" placeholder="Füge dein Lieblingsbild von deiner Reise hinzu!">-->
-                    <input class="reisetippsTeilen" id="beschreibung" name="beschreibung" placeholder="Teile deine Reisetipps mit anderen hier!">
-                    <button type="submit" id="veroeffentlichen" class="knopf"> Veröffentlichen ✔</button>
-            </div>
+
+            <form id="neuerBeitrag">
+                <label>
+                        <b>Titel</b>
+                    </label>
+
+                <input class="titelReise" name="titel" id="titel" placeholder="Wohin ging deine Reise?">
+
+                <br><br>
+
+                <label>
+                        <b>Inhalt</b>
+                    </label>
+                <input class="reisetippsTeilen" id="beschreibung" name="beschreibung" placeholder="Teile deine Reisetipps mit anderen hier!">
+
+                <br><br>
+
+                <button type="submit" id="veroeffentlichen" class="knopf"> Veröffentlichen ✔</button>
+            </form>
+
             <h2>Alle Beiträge</h2>
+
             <table id="tabelleReisen">
                 <thead>
                     <tr>
@@ -53,8 +68,9 @@
                 </thead>
                 <tbody id="tabelleBeitraege">
                 </tbody>
+
             </table>
-            <div id="orte-container"></div>
+
         </div>
 
 
@@ -72,10 +88,8 @@
             </ul>
         </div>
     </div>
-    <!-- Flexcontainer Inhalt Startseite Ende -->
 
-    <br />
-    <!-- Abstand -->
+    <br>
 
     <!-- Fußzeile -->
     <footer>
@@ -117,8 +131,9 @@
             </div>
         </div>
     </footer>
-    <!-- Fußzeile Ende -->
+
     <script src="javascript.js"></script>
+
 </body>
 
 </html>

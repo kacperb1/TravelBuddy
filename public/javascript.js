@@ -1,6 +1,5 @@
 //Clientseitiges Javascript
-
-// Responsive Navigationsleiste, Code übernommen und abgeändert von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp (Auch in den .html Dokumenten)
+//Responsive Navigationsleiste, Code übernommen und abgeändert von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp (Auch in den .html Dokumenten)
 function NavResponsiv() {
     const x = document.getElementById("navigation");
     if (x.className === "navigation") {
@@ -11,15 +10,14 @@ function NavResponsiv() {
 }
 
 
-//const fetchButton = document.querySelector("#fetchbeitraege");
+//Skript, der eine Tabelle für Beiträge erstellt und diese Entsprechend befüllt
 const eintrag = document.querySelector("#tabelleBeitraege");
 const createForm = document.querySelector("#neuerBeitrag");
-const changeForm = document.querySelector("#bearbeiteBeitrag");
 
 createForm.addEventListener("submit", (e) => {
-
     e.preventDefault();
     const values = Object.fromEntries(new FormData(e.target));
+    console.log(values);
 
     fetch("/beitraege", {
 
@@ -35,7 +33,7 @@ createForm.addEventListener("submit", (e) => {
     console.log("FORM SUBMITTED", values);
     location.reload();
 });
-//fetchButton.addEventListener("click", () => {
+
 let i = 0;
 let buttonAendernId = 0;
 
@@ -47,7 +45,6 @@ fetch("/beitraege", {
         },
     })
     .then(res => {
-        // console.log(res.ok, res.status, res)
         if (!res.ok) return Promise.reject(res.status);
         return res.json();
     })
@@ -55,7 +52,7 @@ fetch("/beitraege", {
         beitraege.forEach((beitraege) => {
 
             const buttonAendern = document.createElement("button");
-            //buttonAendern.type = "submit";
+            buttonAendern.type = "submit";
             buttonAendern.id = i;
             buttonAendern.innerText = "Ändern";
             buttonAendern.class = "trigger";
@@ -64,13 +61,11 @@ fetch("/beitraege", {
                 location.href = "entry_update.html"
             };
 
+
             const buttonLoeschen = document.createElement("button");
             buttonLoeschen.type = "submit";
             buttonLoeschen.id = i;
             buttonLoeschen.innerText = "Löschen";
-            /* buttonLoeschen.addEventListener('click', function() {
-                 loeschen(buttonLoeschen.id);
-             }, false);*/
 
             const neueZeile = tabelleReisen.insertRow(i);
             i++;
@@ -83,12 +78,6 @@ fetch("/beitraege", {
             neueZelle1.innerHTML = beitraege.inhalt;
             neueZelle2.appendChild(buttonAendern);
             neueZelle3.appendChild(buttonLoeschen);
-
-            //buttonAendern.addEventListener('click', () => {
-            //  console.log("Bearbeiten noch nicht implementiert")
-            //window.open(entry_update.html);
-            //onclick="location.href='entry_update.html';"
-            //});
 
             buttonLoeschen.addEventListener("click", () => {
 
@@ -107,34 +96,3 @@ fetch("/beitraege", {
     .catch((e) => {
         alert(`WHOOPS: ${e}`);
     });
-
-
-changeForm.addEventListener("submit", (e) => {
-
-    e.preventDefault();
-    const values = Object.fromEntries(new FormData(e.target));
-    const valueID = Object.fromEntries(new FormData(changeForm));
-    fetch("/beitraege", {
-
-        method: "put",
-        body: JSON.stringify(values),
-        headers: {
-
-            "content-type": "application/json",
-        },
-    }).then((res) => {
-        console.log(res.ok);
-    });
-    console.log("FORM SUBMITTED", values);
-    location.reload();
-});
-/*
-function loeschen(beitragid) {
-    fetch('/beitraege/' + beitragid, {
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(eintrag => {
-            location.reload(true);
-        });
-}*/

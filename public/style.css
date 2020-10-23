@@ -14,10 +14,8 @@ body {
 }
 
 
-/* Kopfzeile, Navigation; Hintergrundfarbe Navigation; Style der Links innerhalb der Navigation; Mouseover Stil; Aktive Seite Farbe */
-
-
-/* Navigation und Animation teilweise übernommen von https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_fade1 und von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+/* Kopfzeile, Navigation; Hintergrundfarbe Navigation; Style der Links innerhalb der Navigation; Mouseover Stil; Aktive Seite Farbe
+Navigation und Animation teilweise übernommen von https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_fade1 und von https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
 header {
     box-shadow: 0 0 25px 0 black;
@@ -102,10 +100,7 @@ div.navigation {
 }
 
 
-/* Kopfzeile & Navigation Ende */
-
-
-/* Aufbau der Seite und Inhalt */
+/*Aufbau der Seite samt Inhalt*/
 
 * {
     box-sizing: border-box;
@@ -123,6 +118,16 @@ div.flexcontainer_startseite {
 
 div.artikel {
     background: white;
+    padding: 20px;
+    flex-direction: column;
+    flex: 0 0 70%;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.artikel2 {
+    background: white;
+    margin-top: 30px;
     padding: 20px;
     flex-direction: column;
     flex: 0 0 70%;
@@ -211,6 +216,32 @@ footer li {
     list-style-type: none;
 }
 
+.titelReise {
+    padding: 10px;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    border: 1px solid grey;
+    width: 100%;
+    background: #fffde7;
+    border-radius: 4px;
+}
+
+.reisetippsTeilen {
+    width: 100%;
+    height: 80%;
+    resize: vertical;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    background: #fffde7;
+    border-radius: 4px;
+}
+
 button {
     background-color: #81d4fa;
     color: black;
@@ -266,13 +297,7 @@ td {
 }
 
 
-/* Ende Inspiration Bilder */
-
-
-/* Aufbau der Seite und Inhalt */
-
-
-/* Anfang Button & Modal Popup neuer Beitrag */
+/*  Button & Modal Popup (War ursprünglich für "neuer Beitrag erstellen" gedacht, jetzt in Verwendung bei einem Easteregg lol) */
 
 .popup {
     position: fixed;
@@ -353,56 +378,13 @@ td {
     width: 30%;
 }
 
-.titelReise {
-    padding: 10px;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    font-size: 14px;
-    margin-top: 10px;
-    border: 1px solid grey;
-    width: 100%;
-    background: #fffde7;
-    border-radius: 4px;
-}
 
-.reisetippsTeilen {
-    width: 100%;
-    height: 80%;
-    resize: vertical;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    padding: 10px;
-    font-size: 14px;
-    margin-top: 10px;
-    display: inline-block;
-    border: 1px solid grey;
-    box-sizing: border-box;
-    background: #fffde7;
-    border-radius: 4px;
-}
-
-.lieblingsbild {
-    padding: 10px;
-    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
-    font-size: 14px;
-    margin-top: 10px;
-    border: 1px solid grey;
-    width: 100%;
-    background: #fffde7;
-    border-radius: 4px;
-}
-
-
-/* Ende Button & Modal Popup neuer Beitrag */
-
-
-/* Login / Registrieren */
+/* Login / Registrieren (Unvollständig) */
 
 form.login {
     margin-top: 30px;
     border: 1px solid #f1f1f1;
 }
-
-
-/* Full-width inputs */
 
 input[type=text],
 input[type=password],
@@ -415,15 +397,9 @@ input[type=email] {
     box-sizing: border-box;
 }
 
-
-/* Add a hover effect for buttons */
-
 button:hover {
     opacity: 0.8;
 }
-
-
-/* Extra style for the cancel button (red) */
 
 #cancel {
     width: auto;
@@ -431,23 +407,14 @@ button:hover {
     background-color: #f44336;
 }
 
-
-/* Add padding to containers */
-
 .container {
     padding: 16px;
 }
-
-
-/* The "Forgot password" text */
 
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
-
-/* Change styles for span and cancel button on extra small screens */
 
 @media screen and (max-width: 300px) {
     span.psw {
@@ -460,8 +427,5 @@ span.psw {
 }
 
 body.login {
-    max-width: 50em;
+    max-width: 60em;
 }
-
-
-/* Login / Registrieren Ende */

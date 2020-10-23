@@ -1,24 +1,23 @@
+//Serverseitiges Javascript
 const express = require("express");
 const mysql = require("mysql2/promise");
-
 const app = express();
 
 mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: process.env.DB_PASSWORD,
-    database: "travelbuddy",
-})
-
-.then((con) => {
-    connection = con;
-});
-
+        host: "localhost",
+        user: "root",
+        password: process.env.DB_PASSWORD,
+        database: "travelbuddy",
+    })
+    .then((con) => {
+        connection = con;
+    });
 
 app.use(express.static("public"));
 app.use(express.json());
 
 
+//Funktion, die Beiträge aus der DB holt
 app.get("/beitraege", async(req, res) => {
     const [
         rows
@@ -27,6 +26,7 @@ app.get("/beitraege", async(req, res) => {
 });
 
 
+//Funktion, die Beiträge hinzufügt
 app.post("/beitraege", async(req, res) => {
     const [
         rows,
@@ -42,14 +42,16 @@ app.post("/beitraege", async(req, res) => {
 });
 
 
+//Funktion, die Beiträge bearbeitet
 app.put("/beitraege", async(req, res) => {
-    const [rows] = await connection.execute("SELECT * FROM reise WHERE id=?", [req.script.buttonAendernId]);
+    const [rows] = await connection.execute("SELECT * FROM reise WHERE id=?", [buttonAendernId]);
+    console.log(body);
     try {
         if (req.neuer_Titel != rows.reiseTitel) {
-            const [rows] = await connection.execute("UPDATE reise SET reiseTitel=? WHERE id=?", [req.neuer_Titel, req.script.buttonAendernId]);
+            const [rows] = await connection.execute("UPDATE reise SET reiseTitel=? WHERE id=?", [req.neuer_Titel, buttonAendernId]);
         }
         if (req.neuer_Inhalt != rows.inhalt) {
-            const [rows] = await connection.execute("UPDATE reise SET inhalt=? WHERE id=?", [req.neuer_Inhalt, req.script.buttonAendernId])
+            const [rows] = await connection.execute("UPDATE reise SET inhalt=? WHERE id=?", [req.neuer_Inhalt, buttonAendernId])
         }
     } catch (err) {
         return res.status(500).send('Aktualisieren fehlgeschlagen');
@@ -59,6 +61,7 @@ app.put("/beitraege", async(req, res) => {
 });
 
 
+//Funktion, die Beiträge löscht
 app.delete("/beitraege/:id", async(req, res) => {
     console.log(req.params.id);
 

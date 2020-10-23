@@ -11,6 +11,7 @@
 </head>
 
 <body class="login">
+    <!-- Kopfzeile / Navigation -->
     <header>
         <img src="Images/LogoVorlaeufig.png" alt="TravelBuddy Logo" class="center">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,24 +29,34 @@
         </div>
     </header>
 
-    <form class="login">
 
-        <div class="artikel">
-            <form id="bearbeiteBeitrag">
-                <h1>Bearbeiten</h1>
-                <label><b>Titel</b></label>
-                <input class="neuer_Titel" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?">
+    <!-- Maske Beitrag Bearbeiten -->
+    <div class="artikel2">
 
-                <label><b>Inhalt</b></label>
-                <textarea class="neuer_Beitrag" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!"></textarea>
+        <h2>Beitrag Bearbeiten ✍</h2>
 
-                <button type="submit" onClick="window.open(index.html)" id="beitrag_absenden">Veröffentlichen ✔</button>
+        <form id="bearbeiteBeitrag">
+            <label>
+                    <b>Titel</b>
+                </label>
 
-            </form>
-        </div>
-    </form>
+            <input class="titelReise" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?">
+
+            <br><br>
+
+            <label>
+                    <b>Inhalt</b>
+                </label>
+            <input class="reisetippsTeilen" type="text" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!">
+
+            <br><br>
+
+            <button type="submit" id="beitrag_absenden" class="knopf"> Veröffentlichen ✔</button>
+        </form>
+
+    </div>
+
     <br>
-    <!-- Abstand -->
 
     <!-- Fußzeile -->
     <footer>
@@ -82,10 +93,9 @@
             </div>
         </div>
     </footer>
-    <!-- Fußzeile Ende -->
-    <script src="javascript.js"></script>
+
+    <script src="entry_update.js"></script>
 
 </body>
-
 
 </html>
