@@ -35,7 +35,6 @@ createForm.addEventListener("submit", (e) => {
 });
 
 let i = 0;
-let buttonAendernId = 0;
 
 fetch("/beitraege", {
 
@@ -57,8 +56,7 @@ fetch("/beitraege", {
             buttonAendern.innerText = "Ändern";
             buttonAendern.class = "trigger";
             buttonAendern.onclick = function() {
-                buttonAendernId = buttonAendern.id;
-                location.href = "entry_update.html"
+                location.href = "entry_update.html?id=" + buttonAendern.id;
             };
 
 
