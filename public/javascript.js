@@ -58,7 +58,7 @@ fetch("/beitraege", {
             buttonAendern.class = "trigger";
             buttonAendern.onclick = function() {
                 buttonAendernId = buttonAendern.id;
-                location.href = "entry_update.html"
+                location.href = "entry_update.html?id=" + buttonAendern.id
             };
 
 

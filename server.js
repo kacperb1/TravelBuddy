@@ -43,15 +43,14 @@ app.post("/beitraege", async(req, res) => {
 
 
 //Funktion, die Beiträge bearbeitet
-app.put("/beitraege", async(req, res) => {
-    const [rows] = await connection.execute("SELECT * FROM reise WHERE id=?", [buttonAendernId]);
-    console.log(body);
+app.put("/beitraege/:id", async(req, res) => {
+    const [rows] = await connection.execute("SELECT * FROM reise WHERE id=?", [req.params.id]);
     try {
         if (req.neuer_Titel != rows.reiseTitel) {
-            const [rows] = await connection.execute("UPDATE reise SET reiseTitel=? WHERE id=?", [req.neuer_Titel, buttonAendernId]);
+            const [rows] = await connection.execute("UPDATE reise SET reiseTitel=? WHERE id=?", [req.neuer_Titel, req.params.id]);
         }
         if (req.neuer_Inhalt != rows.inhalt) {
-            const [rows] = await connection.execute("UPDATE reise SET inhalt=? WHERE id=?", [req.neuer_Inhalt, buttonAendernId])
+            const [rows] = await connection.execute("UPDATE reise SET inhalt=? WHERE id=?", [req.neuer_Inhalt, req.params.id])
         }
     } catch (err) {
         return res.status(500).send('Aktualisieren fehlgeschlagen');

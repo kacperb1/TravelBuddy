@@ -11,12 +11,14 @@ function NavResponsiv() {
 
 //Skript, der für Bearbeiten eines Beitrags zuständig ist
 
+
 const changeForm = document.querySelector("#bearbeiteBeitrag");
 
 changeForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    const id = new URLSearchParams(window.location.search).get("id");
     const values = Object.fromEntries(new FormData(e.target));
-    fetch("/beitraege", {
+    fetch("/beitraege/:id", {
 
         method: "put",
         body: JSON.stringify(values),
