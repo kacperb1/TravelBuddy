@@ -17,7 +17,6 @@ const createForm = document.querySelector("#neuerBeitrag");
 createForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const values = Object.fromEntries(new FormData(e.target));
-    console.log(values);
 
     fetch("/beitraege", {
 
@@ -28,13 +27,15 @@ createForm.addEventListener("submit", (e) => {
             "content-type": "application/json",
         },
     }).then((res) => {
+       
         console.log(res.ok);
     });
-    console.log("FORM SUBMITTED", values);
+    console.log("FORM SUBMITTED", values); 
+    alert(`Beitrag erfolgreich hinzugefügt`);
     location.reload();
 });
 
-let i = 0;
+let i = 1;
 
 fetch("/beitraege", {
 
@@ -52,18 +53,17 @@ fetch("/beitraege", {
 
             const buttonAendern = document.createElement("button");
             buttonAendern.type = "submit";
-            buttonAendern.id = i;
+            buttonAendern.id = beitraege.id;
             buttonAendern.innerText = "Ändern";
             buttonAendern.class = "trigger";
             buttonAendern.onclick = function() {
-                buttonAendernId = buttonAendern.id;
                 location.href = "entry_update.html?id=" + buttonAendern.id
             };
 
 
             const buttonLoeschen = document.createElement("button");
             buttonLoeschen.type = "submit";
-            buttonLoeschen.id = i;
+            buttonLoeschen.id = beitraege.id;
             buttonLoeschen.innerText = "Löschen";
 
             const neueZeile = tabelleReisen.insertRow(i);
@@ -86,6 +86,7 @@ fetch("/beitraege", {
 
                     if (res.ok) {
                         neueZeile.remove();
+                        alert(`Beitrag erfolgreich gelöscht`);
                     }
                 });
             });

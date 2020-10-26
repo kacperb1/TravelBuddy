@@ -18,9 +18,10 @@ URLSearchParams(window.location.search).get("id");
 
 changeForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    e.preventDefault();
     const id = new URLSearchParams(window.location.search).get("id");
     const values = Object.fromEntries(new FormData(e.target));
-    fetch("/beitraege/:id", {
+    fetch("/beitraege/" + id, {
 
         method: "PUT",
         body: JSON.stringify(values),
@@ -33,4 +34,5 @@ changeForm.addEventListener("submit", (e) => {
     });
     console.log("FORM SUBMITTED", values);
     location.href = "index.html";
+    alert("Beitrag erfolgreich bearbeitet.")
 });

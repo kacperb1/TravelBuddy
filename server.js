@@ -33,9 +33,7 @@ app.post("/beitraege", async(req, res) => {
     ] = await connection.execute(
             "INSERT INTO reise (reiseTitel, inhalt) VALUES (?, ?)", [req.body.titel, req.body.beschreibung])
         .catch((err) => { res.status(500).send('Beitrag konnte nicht gepostet werden.'); });
-
     res.json({
-        id: reise.insertId,
         titel: req.body.titel,
         inhalt: req.body.beschreibung,
     });
@@ -44,26 +42,28 @@ app.post("/beitraege", async(req, res) => {
 
 //Funktion, die Beiträge bearbeitet
 app.put("/beitraege/:id", async(req, res) => {
-    const [rows] = await connection.execute("SELECT * FROM reise WHERE id=?", [req.params.id]);
-    try {
-        if (req.neuer_Titel != rows.reiseTitel) {
-            const [rows] = await connection.execute("UPDATE reise SET reiseTitel=? WHERE id=?", [req.neuer_Titel, req.params.id]);
-        }
-        if (req.neuer_Inhalt != rows.inhalt) {
-            const [rows] = await connection.execute("UPDATE reise SET inhalt=? WHERE id=?", [req.neuer_Inhalt, req.params.id])
-        }
-    } catch (err) {
-        return res.status(500).send('Aktualisieren fehlgeschlagen');
-    }
+    const [rows] = await connection.execute("SELECT * FROM reise WHERE id = ?", [req.params.id]);
 
+   var reise = JSON.stringify(rows);
+   var reiseTest = reise.substring(1, reise.length-1);
+   var reiseString = JSON.parse(reiseTest);
+
+    try{
+        if (req.body.titel_beitrag != reiseString.reiseTitel){
+            const [rows] = await connection.execute("UPDATE reise SET reiseTitel = ? WHERE id = ?", [req.body.titel_beitrag, req.params.id])
+        }
+        if (req.body.beitrag_inhalt != reiseString.inhalt) {
+            const [rows] = await connection.execute("UPDATE reise SET inhalt = ? WHERE id = ?", [req.body.beitrag_inhalt, req.params.id])
+          }
+        } catch (err) {
+          return res.status(500).send('Update fehlgeschlagen');
+        }
     res.status(200).send();
 });
 
-
 //Funktion, die Beiträge löscht
 app.delete("/beitraege/:id", async(req, res) => {
-    console.log(req.params.id);
-
+    
     const [rows] = await connection.execute("DELETE FROM reise WHERE id = ?", [
         req.params.id,
     ]);
