@@ -35,7 +35,6 @@ createForm.addEventListener("submit", (e) => {
 });
 
 let i = 0;
-let buttonAendernId = 0;
 
 fetch("/beitraege", {
 
