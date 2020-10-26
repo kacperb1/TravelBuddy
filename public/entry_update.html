@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelBuddy: Dein digitaler, bester Freund auf Reisen.</title>
     <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/png" href="Images/Icon.png">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
 
 </head>
 
@@ -40,18 +40,19 @@
                     <b>Titel</b>
                 </label>
 
-            <input class="titelReise" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?">
+            <input class="titelReise" type="text" name="titel_beitrag" placeholder="Wohin ging deine Reise?" maxlength="30" required>
 
             <br><br>
 
             <label>
                     <b>Inhalt</b>
                 </label>
-            <input class="reisetippsTeilen" type="text" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!">
+            <input class="reisetippsTeilen" type="text" name="beitrag_inhalt" placeholder="Teile deine Reisetipps mit anderen hier!" required>
 
             <br><br>
 
-            <button type="submit" id="beitrag_absenden" class="knopf"> Veröffentlichen ✔</button>
+            <button type="submit" id="beitrag_absenden" class="knopf"> Veröffentlichen ✅</button>
+            <button type="button" href="index.html" class="knopf"> Abbrechen ❌</button>
         </form>
 
     </div>

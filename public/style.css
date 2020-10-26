@@ -153,6 +153,11 @@ div.dsgvo {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+img.hund {
+    width: 200px;
+    height: 200px;
+}
+
 p.artikel {
     border: 2px solid rgb(76, 198, 247);
     padding: 8px;
@@ -240,6 +245,10 @@ footer li {
     box-sizing: border-box;
     background: #fffde7;
     border-radius: 4px;
+}
+
+.listeTipps {
+    margin-bottom: 20px;
 }
 
 button {

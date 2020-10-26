@@ -1,11 +1,14 @@
 # TravelBuddy
-PoC einer Community-Webseite zum Teilen von Tipps für Reisen und Urlaube. Die Webseite ist im Rahmen der Vorlesung "Webentwicklung" an der DHBW Stuttgart entwickelt worden im Kurs WWI2019D. Sie verfügt über CRUD-Operationen.
+PoC einer Community-Webseite zum Teilen von Tipps für Reisen und Urlaube. Die Webseite ist im Rahmen der Vorlesung "Webentwicklung" an der DHBW Stuttgart entwickelt worden im Kurs WWI2019D. 
+
 
 ## QuickStart
 1. `git clone https://github.com/kacperb1/TravelBuddy.git`
 2. `npm install`
-3. `npm start`
-4. http://localhost:3000
+3. datenbank.sql in MySQL importieren
+4. MySQL mit Nutzer "root" und Passwort "" starten
+5. `npm start`
+6. http://localhost:3000
 
 ## Architektur
 In der Anwendung TravelBuddies werden die Programmiersprachen HTML, CSS und JavaScript verwendet. Das Frontend und das Backend interagieren miteinander mittels Fetch API. Die HTML-Elemente der Webseite verwenden entsprechende CSS-Dateien, um auch visuell ansprechend zu sein.

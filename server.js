@@ -44,26 +44,27 @@ app.post("/beitraege", async(req, res) => {
 app.put("/beitraege/:id", async(req, res) => {
     const [rows] = await connection.execute("SELECT * FROM reise WHERE id = ?", [req.params.id]);
 
-   var reise = JSON.stringify(rows);
-   var reiseTest = reise.substring(1, reise.length-1);
-   var reiseString = JSON.parse(reiseTest);
+    var reise = JSON.stringify(rows);
+    var reiseTest = reise.substring(1, reise.length - 1);
+    var reiseString = JSON.parse(reiseTest);
 
-    try{
-        if (req.body.titel_beitrag != reiseString.reiseTitel){
+    try {
+
+        if (req.body.titel_beitrag != reiseString.reiseTitel) {
             const [rows] = await connection.execute("UPDATE reise SET reiseTitel = ? WHERE id = ?", [req.body.titel_beitrag, req.params.id])
         }
         if (req.body.beitrag_inhalt != reiseString.inhalt) {
             const [rows] = await connection.execute("UPDATE reise SET inhalt = ? WHERE id = ?", [req.body.beitrag_inhalt, req.params.id])
-          }
-        } catch (err) {
-          return res.status(500).send('Update fehlgeschlagen');
         }
+    } catch (err) {
+        return res.status(500).send('Update fehlgeschlagen');
+    }
     res.status(200).send();
 });
 
 //Funktion, die Beiträge löscht
 app.delete("/beitraege/:id", async(req, res) => {
-    
+
     const [rows] = await connection.execute("DELETE FROM reise WHERE id = ?", [
         req.params.id,
     ]);
@@ -75,5 +76,5 @@ app.delete("/beitraege/:id", async(req, res) => {
     }
 });
 
-
+//localhost: 3000 lädt die Seite
 app.listen(3000);

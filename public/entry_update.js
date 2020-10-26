@@ -9,8 +9,7 @@ function NavResponsiv() {
 }
 
 
-//Skript, der für Bearbeiten eines Beitrags zuständig ist
-
+//Skript, das für Bearbeiten eines Beitrags zuständig ist
 
 const changeForm = document.querySelector("#bearbeiteBeitrag");
 const id = new

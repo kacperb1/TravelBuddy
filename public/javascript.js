@@ -27,16 +27,17 @@ createForm.addEventListener("submit", (e) => {
             "content-type": "application/json",
         },
     }).then((res) => {
-       
+
         console.log(res.ok);
     });
-    console.log("FORM SUBMITTED", values); 
+    console.log("FORM SUBMITTED", values);
     alert(`Beitrag erfolgreich hinzugefügt`);
     location.reload();
 });
 
-let i = 1;
 
+let i = 1;
+// Beiträge auf der Startseite werden geladen
 fetch("/beitraege", {
 
         method: "GET",
@@ -49,6 +50,7 @@ fetch("/beitraege", {
         return res.json();
     })
     .then((beitraege) => {
+        // jede Zeile bzw. Beitrag erhält eigene Löschen und Abbrechen Buttons
         beitraege.forEach((beitraege) => {
 
             const buttonAendern = document.createElement("button");
@@ -56,16 +58,18 @@ fetch("/beitraege", {
             buttonAendern.id = beitraege.id;
             buttonAendern.innerText = "Ändern";
             buttonAendern.class = "trigger";
+
+            //wenn Ändern Button geklickt wird, öffnet sich neues Fenster zum Bearbeiten
             buttonAendern.onclick = function() {
                 location.href = "entry_update.html?id=" + buttonAendern.id
             };
-
 
             const buttonLoeschen = document.createElement("button");
             buttonLoeschen.type = "submit";
             buttonLoeschen.id = beitraege.id;
             buttonLoeschen.innerText = "Löschen";
 
+            // Zeile wird mit Titel, Inhalt und zwei Buttons befüllt
             const neueZeile = tabelleReisen.insertRow(i);
             i++;
             const neueZelle0 = neueZeile.insertCell(0);
@@ -77,6 +81,8 @@ fetch("/beitraege", {
             neueZelle1.innerHTML = beitraege.inhalt;
             neueZelle2.appendChild(buttonAendern);
             neueZelle3.appendChild(buttonLoeschen);
+
+            //buttonLoeschen löscht jeweiligen Beitrag 
 
             buttonLoeschen.addEventListener("click", () => {
 
