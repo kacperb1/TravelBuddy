@@ -251,7 +251,7 @@ footer li {
     margin-bottom: 20px;
 }
 
-button {
+Button {
     background-color: #81d4fa;
     color: black;
     padding: 14px 20px;
@@ -259,6 +259,28 @@ button {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 4px;
+}
+
+.aendernButton {
+    background-color: #81d4fa;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
+    border-radius: 4px;
+}
+
+.abbrechenButton {
+    background-color: lightcoral;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 49.5%;
     border-radius: 4px;
 }
 
